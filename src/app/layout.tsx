@@ -1,10 +1,11 @@
 'use client'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import './globals.css'
 import { noto } from './ui/fonts'
 import Footer from './ui/layout/footer/Footer'
 import Navbar from './ui/layout/navbar/Navbar'
 import Sidepanel from './ui/layout/sidepanel/Sidepanel'
+import Loading from './loading'
 
 export default function RootLayout({
   children,
@@ -20,10 +21,12 @@ export default function RootLayout({
         <title>Ministerio Libertad en Cristo Jesús</title>
         </head>
       <body className={`${noto.className}`}>
-        <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
-        <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
-        {children}
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
+          <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
+          {children}
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )

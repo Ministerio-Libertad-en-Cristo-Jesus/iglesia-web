@@ -16,7 +16,7 @@ const Navbar = ({ openSidePanel, setOpenSidePanel }: Props) => {
   const linksStyles = 'font-medium text-lg text-whiteI hover:text-yellow-500 transition-all duration-200'
 
   return (
-    <header className='flex fixed top-0 z-[40] w-screen justify-center items-center px-28 h-20 bg-blueI'>
+    <header className='flex fixed top-0 z-40 w-screen justify-center items-center px-28 h-20 bg-blueI'>
 
       <List items={list1} listStyle={listStyles} itemStyle={linksStyles} />
 
