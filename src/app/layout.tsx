@@ -14,6 +14,11 @@ export default function RootLayout({
   const [openSidePanel, setOpenSidePanel] = useState(false)
   return (
     <html lang="en">
+      <head>
+        <meta charSet='UTF-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ministerio Libertad en Cristo Jesús</title>
+        </head>
       <body className={`${noto.className}`}>
         <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
         <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
