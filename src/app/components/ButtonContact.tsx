@@ -1,4 +1,5 @@
-import { type ButtonContactType } from '../types/types'
+'use client'
+import { type ButtonContactType } from '../lib/definitions'
 
 const ButtonContact = ({ text, url, icon, green }: ButtonContactType) => {
   return (

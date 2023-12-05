@@ -1,5 +1,5 @@
-import BookOpenWhiteIcon from '../assets/componentSVG/bookOpenWhite'
-import HandWhiteIcon from '../assets/componentSVG/handWhite'
+import BookOpenWhiteIcon from '../components/componentSVG/bookOpenWhite'
+import HandWhiteIcon from '../components/componentSVG/handWhite'
 import ButtonPage from './ButtonPage'
 
 const ButtonsPages = () => {

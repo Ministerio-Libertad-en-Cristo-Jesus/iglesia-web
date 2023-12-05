@@ -1,14 +1,18 @@
-import { useNavigate } from 'react-router-dom'
-import { type PreachType } from '../types/types'
-import { dateSeter } from '../utils/dateSeter'
+'use client'
+import { useRouter } from 'next/navigation'
+import { type PreachType } from '../lib/definitions'
+import { dateSeter } from '../lib/dateSeter'
+import Image from 'next/image'
 
 const CardSmall = ({ title, pastor, content, date, image, id }: PreachType) => {
-  const navigate = useNavigate()
+  const router = useRouter()
   return (
     <article
-    onClick={() => { navigate(`/preach/${id}`) }}
+    onClick={() => { router.push(`/preach/${id}`) }}
     className='w-60 min-w-[15rem] bg-[#d6d6d6] rounded-t-xl rounded-b-xl hover:shadow-md hover:cursor-pointer transition-all duration-200'>
-      <img
+      <Image
+      width={1440}
+      height={700}
       className=' w-60 min-w-[15rem] rounded-t-xl h-36 object-cover'
       src={image}
       alt={title} />

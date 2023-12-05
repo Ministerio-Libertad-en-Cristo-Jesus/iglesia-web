@@ -1,8 +1,8 @@
-import InstagramIcon from '../assets/componentSVG/InstagramIcon'
-import MailIcon from '../assets/componentSVG/MailIcon'
-import PhoneIcon from '../assets/componentSVG/PhoneIcon'
-import WhatsappIcon from '../assets/componentSVG/WhatsappIcon'
-import { type ButtonContactType } from '../types/types'
+import InstagramIcon from '../components/componentSVG/InstagramIcon'
+import MailIcon from '../components/componentSVG/MailIcon'
+import PhoneIcon from '../components/componentSVG/PhoneIcon'
+import WhatsappIcon from '../components/componentSVG/WhatsappIcon'
+import { type ButtonContactType } from '../lib/definitions'
 
 export const buttonsContactInfo: ButtonContactType[] = [
   {
