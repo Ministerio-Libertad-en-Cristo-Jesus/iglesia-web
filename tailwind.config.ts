@@ -17,6 +17,11 @@ const config: Config = {
         blueI: '#14213d',
         whiteI: '#e5e5e5',
         whatsapp: '#39b54a'
+      },
+      flex: {
+        3: '0 0 calc(33% - 30px)',
+        2: '0 0 calc(50% - 30px)',
+        100: '0 0 calc(100% - 30px)'
       }
     },
   },

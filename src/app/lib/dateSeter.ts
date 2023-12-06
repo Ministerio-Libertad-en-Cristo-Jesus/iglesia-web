@@ -1,4 +1,4 @@
-import { type DateModel } from '../types/types'
+import { type DateModel } from '../lib/definitions'
 
 const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
 
