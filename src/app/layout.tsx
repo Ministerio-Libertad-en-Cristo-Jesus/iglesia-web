@@ -21,8 +21,10 @@ export default function RootLayout({
       <head>
         <meta charSet='UTF-8' />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="canonical" href="http://localhost:3000/" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ministerio Libertad en Cristo Jesús</title>
+        <meta name="description" content= "Ministerio Internacional Libertad en Cristo Jesús: Un espacio de fe y comunidad que busca glorificar a Dios y compartir su amor transformador." />
+        <title>Libertad en Cristo Jesús | Iglesia Evangelica</title>
         </head>
       <body className={`${noto.className}`}>
         <ProviderComponent>

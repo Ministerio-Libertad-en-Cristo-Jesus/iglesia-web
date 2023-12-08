@@ -53,11 +53,11 @@ const PayPalMethod = () => {
     }
   }
   const handleClick = () => {
-    if (offeringPaypal.amount === '' || description[1] === '') {
+    if (offeringPaypal.amount === '' || offeringPaypal.description === '') {
       setErrorMessage('Llena todos los campos*')
     } else if (Object.values(errors).some(x => x !== '')) {
       setErrorMessage('Verifica los errores*')
-    } else if (description[0] === '') {
+    } else if (description === '') {
       setErrorMessage('Selecciona un tipo de pago*')
     } else {
       dispatch(changeCheck({ amountCheck: offeringPaypal.amount, descriptionCheck: offeringPaypal.description, payType: description }))
