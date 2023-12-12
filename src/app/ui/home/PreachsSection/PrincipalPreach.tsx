@@ -26,7 +26,7 @@ const PrincipalPreach = ({ title, pastor, date, content, image, id }: PreachType
           <p className='font-normal mb-8 line-clamp-4 text-blueI text-xs lg:text-lg max-w-[850px] mt-3 mr-10 lg:mr-0 lg:mt-5'>{content[0]}</p>
         </div>
 
-        <Button text='Leer Prédica' dark={false} onClick={() => { router.push(`/preachings/${id}`) }} />
+        <Button text='Leer Prédica' dark={false} onClick={() => { router.push(`/preachings/1/${id}`) }} />
 
       </div>
 
