@@ -6,7 +6,7 @@ export const list1: itemList[] = [
     name: 'Inicio'
   },
   {
-    rute: '/aboutUs',
+    rute: '/aboutus',
     name: 'Sobre nosotros'
   },
   {
