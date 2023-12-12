@@ -1,4 +1,4 @@
-import { type InputType } from '../types/types'
+import { type InputType } from '../lib/definitions'
 
 const Input = ({ value, onChange, placeholder, name, error, errorMessage, type, min, max }: InputType) => {
   return (

@@ -1,4 +1,4 @@
-import { type TextAreaType } from '../types/types'
+import { type TextAreaType } from '../lib/definitions'
 
 const TextArea = ({ value, onChange, placeholder, name, error, errorMessage }: TextAreaType) => {
   return (

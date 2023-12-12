@@ -1,4 +1,4 @@
-import { type ButtonType } from '../types/types'
+import { type ButtonType } from '../lib/definitions'
 
 const Button = ({ text, dark, onClick, disabled }: ButtonType) => {
   return (
