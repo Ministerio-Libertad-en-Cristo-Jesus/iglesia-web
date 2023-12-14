@@ -14,7 +14,7 @@ export const buttonsArray: ButtonSidepanelProps[] = [
   },
   {
     svg: <InfoIcon />,
-    rute: '/aboutUs',
+    rute: '/aboutus',
     name: 'Sobre nosotros'
   },
   {

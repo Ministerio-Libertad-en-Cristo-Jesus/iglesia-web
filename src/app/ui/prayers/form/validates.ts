@@ -1,4 +1,4 @@
-import { type FormPrayerType } from '../../../types/types'
+import { type FormPrayerType } from '@/app/lib/definitions'
 
 const nameRegex = /^[a-zA-Z\s]*$/
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
