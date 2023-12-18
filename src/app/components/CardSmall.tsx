@@ -8,7 +8,7 @@ const CardSmall = ({ title, pastor, content, date, image, id }: PreachType) => {
   const router = useRouter()
   return (
     <article
-    onClick={() => { router.push(`/preachings/1/${id}`) }}
+    onClick={() => { router.push(`/preach/${title}`) }}
     className='w-60 min-w-[15rem] bg-[#d6d6d6] rounded-t-xl rounded-b-xl hover:shadow-md hover:cursor-pointer transition-all duration-200'>
       <Image
       width={1440}

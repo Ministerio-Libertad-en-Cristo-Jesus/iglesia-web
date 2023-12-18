@@ -17,7 +17,7 @@ const PreachSection = () => {
       <p className='font-normal text-blueI text-lg mt-1'>Nuestras últimas enseñanzas</p>
       <PrincipalPreach {...firstPreach} />
       <Cards preaches={restPreachings} />
-      <Button text='Ver más Prédicas' dark={false} onClick={() => { router.push('/preachings') }} />
+      <Button text='Ver más Prédicas' dark={false} onClick={() => { router.push('/preachings/1') }} />
     </section>
   )
 }

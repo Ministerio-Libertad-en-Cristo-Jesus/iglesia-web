@@ -12,8 +12,8 @@ import PreachNoExist from '@/app/ui/preach/PreachNoExist'
 export default function Preach () {
   const params = useParams()
   const PreachParamId = params.id
-  const preachId = typeof PreachParamId !== 'object' ? isNaN(parseInt(PreachParamId)) ? 0 : parseInt(PreachParamId) : 0
-  const preachFind = preachings.find(preach => preach.id === preachId)
+  const preachId = typeof PreachParamId !== 'object' ? decodeURIComponent(PreachParamId) : ""
+  const preachFind = preachings.find(preach => preach.title === preachId)
   let preachInfo1: PreachType
   preachFind !== undefined ? preachInfo1 = preachFind : preachInfo1 = preachings[0]
   return (
