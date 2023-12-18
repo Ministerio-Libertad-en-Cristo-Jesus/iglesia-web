@@ -13,6 +13,11 @@ const nextConfig = {
         destination: '/preachings/1',
         permanent: true,
       },
+      {
+        source: "/preach",
+        destination: '/preachings/1',
+        permanent: true,
+      },
     ]
   },
 }
