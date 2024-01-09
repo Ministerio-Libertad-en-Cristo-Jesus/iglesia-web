@@ -20,7 +20,7 @@ export default function Preachings () {
   const page = paramPage === undefined || paramPage === '0' || typeof paramPage === 'object' ? 1 : parseInt(paramPage)
   const preachings = preachings2.slice((page - 1) * cardXPage, page * cardXPage)
   return (
-    <main className="flex flex-col w-full items-center justify-center px-10 lg:px-24 mt-32 lg:mt-40 mb-10 lg:mb-24">
+    <main className="flex flex-col w-full items-center justify-center px-10 lg:px-24 mt-32 lg:mt-40">
       <div className='flex flex-col w-full items-center justify-center max-w-[1440px]'>
         <header>
           <h1 className='font-black text-center text-blueI text-3xl lg:text-5xl mt-8'>Enseñanzas</h1>
