@@ -4,7 +4,7 @@ import SociaMedia from './SocialMedia'
 const Footer = () => {
   const textStyle = 'text-whiteI font-light text-center'
   return (
-    <footer className="flex flex-col z-40 items-center w-full bg-blueI py-16 px-10 lg:px-24">
+    <footer className="flex flex-col z-40 items-center w-full bg-blueI py-16 px-10 lg:px-24 mt-32 sm:mt-36">
       <PagesLinks />
       <div className='flex flex-col items-center my-16'>
         <p className={textStyle}>Ministerio Internacional Libertad en Cristo Jesus</p>
