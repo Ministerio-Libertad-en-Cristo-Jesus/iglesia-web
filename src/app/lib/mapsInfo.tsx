@@ -6,7 +6,7 @@ export const mapsToSelect: MapSelectInfoType[] = [
   {
     name: 'orlando',
     name2: 'paricua',
-    title: 'Sede Principal',
+    title: 'Sede Orlando',
     direction: '8810 Commodity Cir #26, Orlando, FL 32819'
   },
   {
