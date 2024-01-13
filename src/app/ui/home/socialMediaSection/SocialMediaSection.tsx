@@ -2,7 +2,7 @@ import SocialMediaCarrousel from './SocialMediaCarrousel'
 
 const SocialMediaSection = () => {
   return (
-    <section id='socialMediaSect' className='w-full mb-10 lg:mb-24'>
+    <section id='socialMediaSect' className='w-full'>
       <SocialMediaCarrousel />
     </section>
   )
