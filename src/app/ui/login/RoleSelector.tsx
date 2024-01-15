@@ -3,10 +3,12 @@ import { type Dispatch, type SetStateAction, type MouseEvent } from 'react'
 interface Props {
   role: string
   setRole: Dispatch<SetStateAction<string>>
+  setMessage: Dispatch<SetStateAction<string>>
 }
 
-const RoleSelector = ({ role, setRole }: Props) => {
+const RoleSelector = ({ role, setRole, setMessage }: Props) => {
   const handleClick = (e: MouseEvent<HTMLParagraphElement>) => {
+    setMessage('')
     const role = e.currentTarget.innerText
     role === 'Pastor' ? setRole('pastor') : setRole('lider')
   }
