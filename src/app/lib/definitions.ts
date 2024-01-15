@@ -159,3 +159,8 @@ export interface FormPrayerType {
   marital_status: string
   message: string
 }
+
+export interface UserLogin {
+  email: string
+  password: string
+}

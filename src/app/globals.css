@@ -139,3 +139,11 @@ body {
     transform: scaleY(-1) rotate(-135deg)
   }
 }
+
+.background-login-left {
+  background-color: #14213d;
+  opacity: 1;
+  background-image: repeating-linear-gradient(45deg, #182541 25%, transparent 25%, transparent 75%, #182541 75%, #182541), repeating-linear-gradient(45deg, #182541 25%, #14213d 25%, #14213d 75%, #182541 75%, #182541);
+  background-position: 0 0, 31px 31px;
+  background-size: 62px 62px;
+}
