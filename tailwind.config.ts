@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         blueI: '#14213d',
         whiteI: '#e5e5e5',
+        grayI: '#d9d9d9',
+        grayII: '#cccccc',
         whatsapp: '#39b54a'
       },
       flex: {

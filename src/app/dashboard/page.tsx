@@ -1,11 +1,11 @@
-import DashboardBox from "../ui/dashboard/DashboardBox";
+import DashboardBox from "../ui/dashboard/DashboardBox"
 
 const Dashboard = () => {
   return (
     <div className="flex justify-center items-center w-full h-screen">
-      <DashboardBox />
+        <DashboardBox />
     </div>
   )
 }
  
-export default Dashboard;
+export default Dashboard

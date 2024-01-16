@@ -18,7 +18,7 @@ export default function RootLayout({
   const [openSidePanel, setOpenSidePanel] = useState(false)
   const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID as string
   const pathname = usePathname()
-  const rutesNotLayout = ['/login', '/dashboard', '/leader']
+  const rutesNotLayout = ['/login', '/dashboard', '/leader', '/leader/tasks', '/leader/config']
   const isRuteNotLayout = rutesNotLayout.includes(pathname)
   return (
     <html lang="en">
@@ -33,12 +33,10 @@ export default function RootLayout({
       <body className={`${noto.className}`}>
         <ProviderComponent>
           <PayPalScriptProvider options={{ clientId: paypalClientId, currency: 'USD' }}>
-            <Suspense fallback={<Loading />}>
-              {!isRuteNotLayout && <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />}
-              {!isRuteNotLayout && <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />}
-              {children}
-              {!isRuteNotLayout && <Footer />}
-            </Suspense>
+            {!isRuteNotLayout && <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />}
+            {!isRuteNotLayout && <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />}
+            {children}
+            {!isRuteNotLayout && <Footer />}
           </PayPalScriptProvider>
         </ProviderComponent>
       </body>

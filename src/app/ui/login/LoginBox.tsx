@@ -21,6 +21,7 @@ const LoginBox = () => {
   })
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -39,7 +40,7 @@ const LoginBox = () => {
     }, { withCredentials: true })
       .then(res => {
         setLoading(false)
-        router.push('/dashboard')
+        router.push(`/${role === 'pastor' ? 'dashboard' : 'leader'}`)
       })
       .catch(err => {
         setLoading(false)
@@ -47,6 +48,7 @@ const LoginBox = () => {
       })
 
   }
+
   return (
     <section className="flex flex-col w-full min-h-full items-center py-20 px-8 sm:px-24 justify-between">
       <div className="flex w-full flex-col items-center gap-7">
