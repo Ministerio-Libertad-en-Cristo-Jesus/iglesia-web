@@ -1,4 +1,4 @@
-import { extractUser } from "./extractUser"
+import { extractUser } from "../../lib/extractUser"
 
 const DashboardBox = async () => {
   const user = await extractUser()
