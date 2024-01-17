@@ -11,6 +11,7 @@ const ChangePassword = () => {
   const router = useRouter()
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
+  
   const [newPassword, setNewPassword] = useState({
     newpassword: "",
     repeatnewpassword: ""
@@ -35,6 +36,7 @@ const ChangePassword = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setMessage('')
     const statusPassword = ['Aceptable', 'Segura']
 
     if(Object.values(newPassword).some(x => x === '')) {
@@ -74,14 +76,31 @@ const ChangePassword = () => {
     <form onSubmit={handleSubmit} className="flex flex-col w-full gap-8">
       <h2 className="text-blueI font-black text-2xl">Cambiar Contraseña</h2>
       <div className="flex w-full gap-8">
-        <InputChangePassword name="newpassword" value={newPassword.newpassword} placeholder="Nueva contraseña" error={false} errorMessage={newPasswordError.newpassword} type="text" onChange={handleChange} />
-        <InputChangePassword name="repeatnewpassword" value={newPassword.repeatnewpassword} placeholder="Repita la contraseña" error={false} errorMessage={newPasswordError.repeatnewpassword} type="text" onChange={handleChange} />
+        <InputChangePassword
+          name="newpassword"
+          value={newPassword.newpassword}
+          placeholder="Nueva contraseña"
+          error={newPasswordError.newpassword !== '' && newPasswordError.newpassword !== 'Aceptable' && newPasswordError.newpassword !== 'Segura'}
+          errorMessage={newPasswordError.newpassword}
+          type="text"
+          onChange={handleChange}
+        />
+
+        <InputChangePassword
+          name="repeatnewpassword"
+          value={newPassword.repeatnewpassword}
+          placeholder="Repita la contraseña"
+          error={newPasswordError.repeatnewpassword !== ''}
+          errorMessage={newPasswordError.repeatnewpassword}
+          type="text"
+          onChange={handleChange}
+        />
       </div>
       <div className={`flex w-full justify-center ${loading ? '' : 'hidden'}`}>
         <SpinLoader />
       </div>
       <div className={`flex w-full justify-center ${message === '' ? 'hidden' : ''}`}>
-        <p className={`text-sm font-semibold text-center rounded-lg ${message === 'Contraseña Cambiada' ? 'text-green-700 bg-green-300' : 'text-red-800 bg-red-300'} text-red-800 bg-red-300 py-1 px-3`}>{message}</p>
+        <p className={`text-sm font-semibold text-center rounded-lg ${message === 'Contraseña Cambiada' ? 'text-green-700 bg-green-300' : 'text-red-800 bg-red-300'} py-1 px-3`}>{message}</p>
       </div>
       <ButtonLogin text="Cambiar contraseña" dark={true} disabled={false} type="submit" />
     </form>

@@ -12,12 +12,6 @@ interface User {
 }
 
 export async function extractUser (): Promise<User> {
-  let user = {
-    email: '',
-    name: '',
-    role: ''
-  }
-
   const cookieStore = cookies()
   const token = cookieStore.get(COOKIE_NAME)?.value
   if (!token) {
@@ -32,13 +26,12 @@ export async function extractUser (): Promise<User> {
       redirect('/login')
     }
     const { email } = verifiedToken
-    const userFind = await User.findOne({ email })
-    user = {
-      email: userFind?.email,
-      name: userFind?.name,
-      role: userFind?.role
+    const userFind = await User.findOne({ email }, { name: 1, email: 1, role: 1 })
+    if (userFind === null) {
+      redirect('/login')
     }
-    return user
+
+    return userFind
 
   } catch (error) {
     console.log(error)
