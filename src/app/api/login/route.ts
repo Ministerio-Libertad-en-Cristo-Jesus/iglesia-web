@@ -32,6 +32,7 @@ export async function POST(req: Request) {
     const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ""
     const token = sign(
       {
+        id: user._id,
         email: user.email
       },
       secret,

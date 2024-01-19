@@ -21,11 +21,17 @@ const userSchema = new Schema({
     default: 'lider',
   },
   assignedtasks: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Task'
+    }],
     default: []
   },
   imposedtasks: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Task'
+    }],
     default: []
   }
 })
