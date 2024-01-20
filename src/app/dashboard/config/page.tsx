@@ -1,4 +1,4 @@
-import ChangePassword from "@/app/ui/leader/config/ChangePassword"
+import ChangePassword from "@/app/ui/dashboard/config/ChangePassword"
 
 const Config = () => {
   return (

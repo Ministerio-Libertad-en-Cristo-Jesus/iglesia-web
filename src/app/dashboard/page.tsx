@@ -1,10 +1,8 @@
-import DashboardBox from "../ui/dashboard/DashboardBox"
+import UserCard from "../ui/dashboard/UserCard"
 
 const Dashboard = () => {
   return (
-    <div className="flex justify-center items-center w-full h-screen">
-        <DashboardBox />
-    </div>
+    <UserCard />
   )
 }
  

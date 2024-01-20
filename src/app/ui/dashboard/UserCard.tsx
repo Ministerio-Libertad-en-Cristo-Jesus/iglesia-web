@@ -18,9 +18,15 @@ const UserCard = async () => {
         </div>
       </div>
       <section className="flex flex-col w-full h-full gap-6">
-        <div className="flex items-center h-full w-full gap-4 sm:gap-6 md:gap-8">
-          <ButtonCard rute="/leader/tasks" name="Tareas por hacer"/>
-          <ButtonCard rute="/leader/config" name="Cambiar contraseña"/>
+        <div className="flex flex-col items-center h-full w-full gap-4 sm:gap-6 md:gap-8">
+          <div className="flex w-full gap-4 sm:gap-6 md:gap-8">
+            <ButtonCard rute="/leader/tasks" name="Tareas por hacer"/>
+            <ButtonCard rute="/leader/users" name="Ver usuarios"/>
+          </div>
+          <div className="flex w-full gap-4 sm:gap-6 md:gap-8">
+            <ButtonCard rute="/leader/articles" name="Ver artículos"/>
+            <ButtonCard rute="/leader/config" name="Cambiar contraseña"/>
+          </div>
         </div>
       </section>
     </article>

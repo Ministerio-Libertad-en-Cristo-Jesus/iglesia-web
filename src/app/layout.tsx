@@ -18,7 +18,7 @@ export default function RootLayout({
   const [openSidePanel, setOpenSidePanel] = useState(false)
   const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID as string
   const pathname = usePathname()
-  const rutesNotLayout = ['/login', '/dashboard', '/leader', '/leader/tasks', '/leader/config']
+  const rutesNotLayout = ['/login', '/dashboard', '/leader', '/leader/tasks', '/leader/config', '/dashboard/tasks', '/dashboard/config', '/dashboard/users', '/dashboard/articles']
   const isRuteNotLayout = rutesNotLayout.includes(pathname)
   return (
     <html lang="en">

@@ -1,7 +1,7 @@
-import Cards from "@/app/ui/leader/tasks/Cards"
-import TaskFilters from "@/app/ui/leader/tasks/TaskFilters"
+import Cards from "@/app/ui/dashboard/tasks/Cards"
+import TaskFilters from "@/app/ui/dashboard/tasks/TaskFilters"
 
-const Task = ({ searchParams }: { searchParams: { importance: string, status: string, search: string } }) => {
+const Tasks = ({ searchParams }: { searchParams: { importance: string, status: string, search: string } }) => {
   const importance = searchParams.importance || ''
   const status = searchParams.status || ''
   const search = searchParams.search || ''
@@ -14,4 +14,4 @@ const Task = ({ searchParams }: { searchParams: { importance: string, status: st
   )
 }
  
-export default Task
+export default Tasks
