@@ -14,10 +14,10 @@ const Button = ({ rute, name, icon, onClick }: Props) => {
   return (
     <Link
     onClick={onClick}
-    className={`flex items-center py-3 pl-2 mx-5 rounded-md ${pathname === rute ? 'bg-grayII' : ''} hover:bg-grayII`}
+    className={`flex w-auto md:w-full items-center p-1 md:py-3 md:pl-2 rounded-md ${pathname === rute ? 'bg-whiteI' : ''} hover:bg-whiteI`}
     href={rute}>
       {icon}
-      <p className='font font-medium text-base sm:text-lg text-blueI ml-3'>{name}</p>
+      <p className='font font-medium hidden md:block text-sm min-[1441px]:text-base sm:text-lg text-blueI ml-3'>{name}</p>
     </Link>
   )
 }

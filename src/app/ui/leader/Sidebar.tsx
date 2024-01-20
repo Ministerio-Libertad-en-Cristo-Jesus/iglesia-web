@@ -3,9 +3,9 @@ import Buttons from "./Buttons"
 
 const Sidebar = () => {
   return (
-    <aside className="flex flex-col min-h-[432px] max-h-[94vh] w-[30%] bg-grayI rounded-xl gap-8">
-      <div className="flex justify-center items-center py-6 w-full bg-blueI rounded-t-xl">
-        <div className="w-20">
+    <aside className="flex flex-row md:flex-col md:min-h-[432px] max-h-[94vh] w-full md:w-[30%] bg-white rounded-xl gap-4 md:gap-8">
+      <div className="justify-center hidden sm:flex items-center py-3 px-5 md:py-6 bg-blueI rounded-l-xl md:rounded-bl-none md:rounded-t-xl">
+        <div className="w-14 md:w-20">
           <LogoBlueSmall />
         </div>
       </div>

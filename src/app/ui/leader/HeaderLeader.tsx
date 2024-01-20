@@ -5,11 +5,9 @@ import SearchBar from "./SearchBar"
 const HeaderLeader = () => {
   const pathname = usePathname()
   return (
-    <div className="flex w-full justify-between">
-      <h1 className="font-black text-blueI text-3xl">{pathname === '/leader' ? 'Dashboard' : pathname === '/leader/tasks' ? 'Tareas' : pathname === '/leader/config' ? 'Configuración' : 'Dashboard'}</h1>
-      <div className="">
-        <SearchBar />
-      </div>
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full justify-between">
+      <h1 className="font-black text-blueI text-xl md:text-3xl">{pathname === '/leader' ? 'Dashboard' : pathname === '/leader/tasks' ? 'Tareas' : pathname === '/leader/config' ? 'Configuración' : 'Dashboard'}</h1>
+      <SearchBar />
     </div>
   )
 }

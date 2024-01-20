@@ -29,7 +29,7 @@ const InputChangePassword = ({ value, onChange, placeholder, name, error, errorM
         </div>
       </div>
 
-      <label className={`font-semibold text-sm ${errorMessage === 'Insegura' ? 'text-red-700 bg-red-300' : errorMessage === 'Aceptable' ? 'text-orange-700 bg-orange-300' : errorMessage === 'Segura' ? 'text-green-700 bg-green-300' : 'text-red-700 bg-red-300'} rounded-lg ${errorMessage === '' ? 'hidden' : ''} px-3 py-1 text-sm mt-1`}>{errorMessage}</label>
+      <label className={`font-semibold text-xs sm:text-sm ${errorMessage === 'Insegura' ? 'text-red-700 bg-red-300' : errorMessage === 'Aceptable' ? 'text-orange-700 bg-orange-300' : errorMessage === 'Segura' ? 'text-green-700 bg-green-300' : 'text-red-700 bg-red-300'} rounded-lg ${errorMessage === '' ? 'hidden' : ''} px-3 py-1 text-sm mt-1`}>{errorMessage}</label>
     </div>
   )
 }

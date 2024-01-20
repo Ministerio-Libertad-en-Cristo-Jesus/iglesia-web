@@ -51,10 +51,10 @@ const TaskFilters = () => {
     replace('/leader/tasks')
   }
   return (
-    <section className="flex w-full items-end gap-8">
+    <section className="flex flex-col md:flex-row w-full items-end gap-4 sm:gap-6 md:gap-8">
       <SelectFilter options={priorityOptions} placeholder="Prioridad" handleChange={handleChange} value={priority} name="prioriry"/>
       <SelectFilter options={statusOptions} placeholder="Status" handleChange={handleChange} value={status} name="status"/>
-      <button onClick={handleClick} className="bg-blueI text-whiteI py-3 px-12 rounded-xl">
+      <button onClick={handleClick} className="w-full text-sm md:text-base bg-blueI text-whiteI py-2 px-8 md:py-3 md:px-12 rounded-xl">
         Todas
       </button>
     </section>

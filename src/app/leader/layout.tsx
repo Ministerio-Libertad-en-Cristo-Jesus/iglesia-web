@@ -9,15 +9,15 @@ const LeaderLayout = ({
   children: React.ReactNode
 }) => {
   return (
-    <div className="flex w-full min-h-screen h-screen p-8 gap-8">
+    <main className="flex flex-col md:flex-row w-screen h-auto md:h-[100dvh] p-6 gap-6 md:p-8 md:gap-8">
       <Sidebar />
-      <div className="flex flex-col w-full min-h-full bg-grayI rounded-xl px-16 py-12 gap-8">
+      <section className="flex flex-col w-full h-full bg-white rounded-xl px-8 py-8 gap-6 md:px-16 md:py-12 md:gap-8">
         <HeaderLeader />
         <Suspense fallback={<Loading />}>
           {children}
         </Suspense>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
  

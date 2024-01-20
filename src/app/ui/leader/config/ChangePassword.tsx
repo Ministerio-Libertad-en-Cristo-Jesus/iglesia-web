@@ -73,9 +73,9 @@ const ChangePassword = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col w-full gap-8">
-      <h2 className="text-blueI font-black text-2xl">Cambiar Contraseña</h2>
-      <div className="flex w-full gap-8">
+    <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6 md:gap-8">
+      <h2 className="text-blueI font-black text-xl sm:text-2xl">Cambiar Contraseña</h2>
+      <div className="flex flex-col sm:flex-row w-full gap-4 sm:gap-6 md:gap-8">
         <InputChangePassword
           name="newpassword"
           value={newPassword.newpassword}

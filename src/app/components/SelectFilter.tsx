@@ -16,7 +16,7 @@ const SelectFilter = ({ options, name, value, handleChange, placeholder }: Props
     <div className="flex flex-col w-full">
       <label className='text-blueI text-sm'>{placeholder}</label>
       <select
-      className={`outline-none rounded-lg border-2 border-blueI hover:bg-blue py-2 pl-2 text-blueI focus:text-whiteI bg-white hover:cursor-pointer focus:bg-blueI transition-all duration-200`}
+      className={`text-sm md:text-base outline-none rounded-lg border md:border-2 border-blueI hover:bg-blue py-1 md:py-2 pl-2 text-blueI focus:text-whiteI bg-white hover:cursor-pointer focus:bg-blueI transition-all duration-200`}
       name={name}
       value={value}
       onChange={handleChange}>

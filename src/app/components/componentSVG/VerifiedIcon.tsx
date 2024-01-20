@@ -5,7 +5,7 @@ interface Props {
 
 const VerifiedIcon = ({ admin, small }: Props) => {
   return (
-    <svg className={`${small ? 'w-4' : 'w-7'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.18 27.19">
+    <svg className={`${small ? 'w-4' : 'w-4 md:w-7'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.18 27.19">
       <defs>
         <style>
           {`.cls-23{fill:${admin ? '#fbb03b' : '#29abe2'};}.cls-23,.cls-24{fill-rule:evenodd;}.cls-24{fill:#fff;}`}

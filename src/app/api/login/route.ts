@@ -6,7 +6,7 @@ import { sign } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { COOKIE_NAME } from "@/app/constants"
 
-const MAX_AGE = 60 * 30
+const MAX_AGE = 60 * 60 * 3
 
 export async function POST(req: Request) {
   const body = await req.json()
