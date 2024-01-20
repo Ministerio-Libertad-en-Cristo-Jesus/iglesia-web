@@ -1,7 +1,7 @@
 "use server"
 import { revalidatePath } from "next/cache"
-import Task from "./database/models/Task"
-import { connectToDB } from "./database/utils"
+import Task from "../database/models/Task"
+import { connectToDB } from "../database/utils"
 import { redirect } from "next/navigation"
 
 export async function updateTaskStatus(formData: FormData) {

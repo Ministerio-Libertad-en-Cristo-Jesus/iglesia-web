@@ -1,7 +1,7 @@
 import UserPlaceHolder from "@/app/components/componentSVG/UserPlaceholder"
 import VerifiedIcon from "@/app/components/componentSVG/VerifiedIcon"
 import ButtonCard from "./ButtonCard"
-import { extractUser } from "@/app/lib/extractUser"
+import { extractUser } from "@/app/lib/actions/extractUser"
 
 const UserCard = async () => {
   const user = await extractUser()

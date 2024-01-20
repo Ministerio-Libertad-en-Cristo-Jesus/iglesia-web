@@ -1,10 +1,10 @@
 import bcrypt from "bcrypt"
 import { cookies } from "next/headers"
-import { connectToDB } from "./database/utils"
-import { COOKIE_NAME } from "../constants"
+import { connectToDB } from "../database/utils"
+import { COOKIE_NAME } from "../../constants"
 import { redirect } from "next/navigation"
 import { verify } from "jsonwebtoken"
-import User from "./database/models/User"
+import User from "../database/models/User"
 
 export async function changePassword(newpassword: string): Promise<string> {
   const cookieStore = cookies()

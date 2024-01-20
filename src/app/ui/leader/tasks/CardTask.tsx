@@ -1,5 +1,5 @@
 import VerifiedIcon from "@/app/components/componentSVG/VerifiedIcon"
-import { updateTaskStatus } from "@/app/lib/updateTaskStatus"
+import { updateTaskStatus } from "@/app/lib/actions/updateTaskStatus"
 interface Props {
   id: string
   author: string

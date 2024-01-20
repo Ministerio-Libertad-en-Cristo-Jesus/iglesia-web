@@ -3,7 +3,7 @@ import { connectToDB } from "@/app/lib/database/utils"
 import { verify } from "jsonwebtoken"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
-import Task from "./database/models/Task"
+import Task from "../database/models/Task"
 import mongoose from "mongoose"
 
 interface Task {

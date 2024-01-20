@@ -1,4 +1,4 @@
-import { extractTask } from "@/app/lib/extractTask"
+import { extractTask } from "@/app/lib/actions/extractTask"
 import CardTask from "./CardTask"
 
 const Cards = async ({ importance, status, search }: { importance: string, status: string, search: string }) => {
