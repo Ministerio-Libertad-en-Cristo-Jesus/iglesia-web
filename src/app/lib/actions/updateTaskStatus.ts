@@ -6,6 +6,7 @@ import { redirect } from "next/navigation"
 
 export async function updateTaskStatus(formData: FormData) {
   const { status, id } = Object.fromEntries(formData)
+  
   try {
     await connectToDB()
     if (status === 'completed') {

@@ -11,7 +11,10 @@ const UserCard = async () => {
         <UserPlaceHolder />
         <div className="flex flex-col">
           <h3 className="flex items-center gap-2 text-base md:text-3xl text-blueI font-black">{user.name} <VerifiedIcon small={false} admin={user.role === 'pastor'} /></h3>
-          <p className="text-xs md:text-sm text-gray-700">{user.email}</p>
+          <p className="text-xs md:text-sm text-gray-700">@{user.username}</p>
+          <p className="text-blueI text-xs sm:text-sm mt-3"><b>Email:</b> {user.email}</p>
+          <p className="text-blueI text-xs sm:text-sm"><b>Teléfono:</b> {user.phone}</p>
+          <p className="text-blueI text-xs sm:text-sm"><b>Cargo:</b> {user.role}</p>
         </div>
       </div>
       <section className="flex flex-col w-full h-full gap-6">

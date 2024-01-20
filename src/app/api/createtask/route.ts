@@ -55,10 +55,6 @@ export async function POST(req: Request) {
       owner: userToImpose._id
     })
     await newTask.save()
-    userToImpose.assignedtasks.push(newTask._id)
-    user.imposedtasks.push(newTask._id)
-    await userToImpose.save()
-    await user.save()
 
     return NextResponse.json({ message: 'Tarea creada' }, { status: 200 })
   } catch (error) {

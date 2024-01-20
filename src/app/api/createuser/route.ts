@@ -5,9 +5,9 @@ import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   const body = await req.json()
-  const { email, name, password, role } = body
+  const { email, username, phone, name, password, role } = body
   // Si algun dato falta o viene vacio devuelvo error
-  if (!email || !name || !password || !role) {
+  if (!email || !username || !phone || !name || !password || !role) {
     return NextResponse.json({ message: 'Faltan datos' }, { status: 400 })
   }
   try {
@@ -15,9 +15,13 @@ export async function POST(req: Request) {
     await connectToDB()
 
     // Verifico si el email ya esta registrado en la base de datos y si es asi devuelvo error
-    const user = await User.findOne({ email })
-    if (user) {
+    const userMail = await User.findOne({ email })
+    const userName = await User.findOne({ username })
+    if (userMail) {
       return NextResponse.json({ message: 'El email ya esta registrado' }, { status: 400 })
+    }
+    if (userName) {
+      return NextResponse.json({ message: 'El username ya esta en uso' }, { status: 400 })
     }
 
     // Encripto la contraseña y guardo el usuario en la base de datos con la contraseña encriptada y el array de assignedtasks y imposedtasks vacios.
@@ -26,11 +30,11 @@ export async function POST(req: Request) {
 
     const newUser = new User({
       email,
+      username,
+      phone,
       name,
       password: hashPassword,
-      role,
-      assignedtasks: [],
-      imposedtasks: []
+      role
     })
 
     await newUser.save()

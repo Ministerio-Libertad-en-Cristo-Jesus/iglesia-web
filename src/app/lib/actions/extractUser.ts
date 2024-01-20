@@ -7,8 +7,10 @@ import { redirect } from "next/navigation"
 
 interface User {
   email: string
+  username: string
   name: string
   role: string
+  phone: string
 }
 
 export async function extractUser (): Promise<User> {
@@ -26,7 +28,7 @@ export async function extractUser (): Promise<User> {
       redirect('/login')
     }
     const { email } = verifiedToken
-    const userFind = await User.findOne({ email }, { name: 1, email: 1, role: 1 })
+    const userFind = await User.findOne({ email }, { name: 1, username: 1, phone: 1, email: 1, role: 1 })
     if (userFind === null) {
       redirect('/login')
     }

@@ -6,6 +6,17 @@ const userSchema = new Schema({
     required: true,
     unique: true
   },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    min: 3,
+    max: 20
+  },
+  phone: {
+    type: String,
+    required: true
+  },
   name: {
     type: String,
     required: true
@@ -19,20 +30,6 @@ const userSchema = new Schema({
     required: true,
     enum: ['pastor', 'lider'],
     default: 'lider',
-  },
-  assignedtasks: {
-    type: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Task'
-    }],
-    default: []
-  },
-  imposedtasks: {
-    type: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Task'
-    }],
-    default: []
   }
 })
 
