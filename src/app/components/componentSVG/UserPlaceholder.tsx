@@ -1,6 +1,6 @@
 const UserPlaceHolder = () => {
   return (
-    <svg className="w-24 sm:w-48 md:w-64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.81 113.81">
+    <svg className="w-24 sm:w-48 md:w-48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.81 113.81">
       <defs>
         <style>
           {'.cls-81{fill:gray;}.cls-82{fill:#d9d9d9;}'}

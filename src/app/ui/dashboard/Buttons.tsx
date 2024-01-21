@@ -19,7 +19,7 @@ const Buttons = () => {
       })
   }
   return (
-    <div className="flex flex-row md:flex-col items-center justify-between w-full h-full rounded-b-xl py-5 px-3 sm:px-5 sm:py-0">
+    <div className="flex flex-row md:flex-col items-center justify-between w-full h-full rounded-b-xl py-5 px-3 sm:px-5 md:py-0">
       <div className="flex flex-row md:flex-col w-full gap-3 md:gap-0">
         <Button icon={<DashboardIcon />} rute='/dashboard' name='Inicio' />
         <Button icon={<TaskIcon />} rute='/dashboard/tasks' name='Tareas' />

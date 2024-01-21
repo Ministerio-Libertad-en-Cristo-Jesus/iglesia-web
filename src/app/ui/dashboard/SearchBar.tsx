@@ -1,6 +1,6 @@
 'use client'
 import SearchIcon from "@/app/components/componentSVG/SearchIcon"
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
 
 const SearchBar = () => {
@@ -15,6 +15,7 @@ const SearchBar = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const params = new URLSearchParams(searchParams)
+    params.set('page', '1')
     params.set('search', searchText)
     replace(`${pathname}?${params}`)
   }

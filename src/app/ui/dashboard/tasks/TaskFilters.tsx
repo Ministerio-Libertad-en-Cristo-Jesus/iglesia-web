@@ -48,7 +48,7 @@ const TaskFilters = () => {
   const handleClick = () => {
     setPriority('')
     setStatus('')
-    replace('/leader/tasks')
+    replace(pathname)
   }
   return (
     <section className="flex flex-col md:flex-row w-full items-end gap-4 sm:gap-6 md:gap-8">

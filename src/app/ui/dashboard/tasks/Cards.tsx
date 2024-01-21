@@ -27,4 +27,4 @@ const Cards = async ({ importance, status, search }: { importance: string, statu
   )
 }
  
-export default Cards;
+export default Cards
