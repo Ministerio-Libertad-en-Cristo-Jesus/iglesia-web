@@ -3,16 +3,29 @@ import { jwtVerify } from "jose";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const token = request.cookies.get(COOKIE_NAME)?.value
+  const token = request.cookies.get(COOKIE_NAME)?.value || ''
   try {
-    if(!token) {
+    const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+    const verifiedToken = await jwtVerify(token, new TextEncoder().encode(secret));
+    // Si el token no es válido, redirigir al login
+
+    if(!verifiedToken && !request.nextUrl.pathname.startsWith('/login')) {
       return NextResponse.redirect(new URL("/login", request.url));
     }
-    const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
-    const { payload } = await jwtVerify(token, new TextEncoder().encode(secret));
+    const payload = verifiedToken.payload;
+    // Si existe el token y el rol es lider, redirigir al leader
+    if(request.nextUrl.pathname.startsWith('/login') && payload.role === 'lider') {
+      return NextResponse.redirect(new URL("/leader", request.url));
+    }
+    // Si existe el token y el rol es pastor, redirigir al dashboard
+    if(request.nextUrl.pathname.startsWith('/login') && payload.role === 'pastor') {
+      return NextResponse.redirect(new URL("/dashboard", request.url));
+    }
+    // Si el usuario es lider y quiere acceder a la ruta /dasboard, redirigir a la ruta /leader
     if(request.nextUrl.pathname.startsWith('/dashboard') && payload.role === 'lider') {
       return NextResponse.redirect(new URL("/leader", request.url));
     }
+    // Si el usuario es pastor y quiere acceder a la ruta /leader, redirigir a la ruta /dashboard
     if(request.nextUrl.pathname.startsWith('/leader') && payload.role === 'pastor') {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
@@ -23,5 +36,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/leader/:path*"],
+  matcher: ["/dashboard/:path*", "/leader/:path*", "/login"],
 };

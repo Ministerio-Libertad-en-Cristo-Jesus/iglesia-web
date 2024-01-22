@@ -80,7 +80,7 @@ const AssingTaskForm = ({ id }: { id: string }) => {
         <SpinLoader />
       </div>
       <p className={`${message === '' ? 'hidden' : ''} text-sm font-medium text-center rounded-lg ${message === 'Tarea creada' ? 'text-green-800 bg-green-300' : 'text-red-800 bg-red-300'} py-1 px-1`}>{message}</p>
-      <ButtonLogin text="Crear tarea" dark={true} disabled={false} type="submit" />
+      <ButtonLogin text="Crear tarea" dark={true} disabled={loading} type="submit" />
     </form>
   )
 }
