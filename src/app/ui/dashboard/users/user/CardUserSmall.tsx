@@ -10,7 +10,7 @@ const CardUserSmall = async ({ id }: { id: string }) => {
         <UserPlacehoderSmall />
       </div>
       <div>
-        <h3 className="flex font-black text-whiteI gap-1">{user.name} <VerifiedIcon admin={user.role === 'pastor'} small={true} /></h3>
+        <h3 className="flex font-black text-whiteI gap-1">{user.name} <VerifiedIcon admin={user.role !== 'lider'} small={true} /></h3>
         <p className="text-whiteI text-xs">{user.email}</p>
       </div>
     </article>

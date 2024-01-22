@@ -4,10 +4,12 @@ const taskSchema = new Schema({
   title: {
     type: String,
     required: true,
+    encoding: "utf8mb4"
   },
   description: {
     type: String,
-    required: true
+    required: true,
+    encoding: "utf8mb4"
   },
   importance: {
     type: String,

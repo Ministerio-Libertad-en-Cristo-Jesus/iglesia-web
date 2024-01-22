@@ -1,5 +1,4 @@
 import Task from '@/app/lib/database/models/Task'
-import bcrypt from 'bcrypt'
 import { connectToDB } from "@/app/lib/database/utils"
 import { NextResponse } from "next/server"
 import { cookies } from 'next/headers'
@@ -24,9 +23,9 @@ export async function POST(req: Request) {
 
   // Extraigo los datos del body
   const body = await req.json()
-  const { title, description, importance, owner } = body
+  const { title, description, importance, id } = body
   // Si algun dato falta o viene vacio devuelvo error
-  if (!title || !description || !importance || !owner) {
+  if (!title || !description || !importance || !id) {
     return NextResponse.json({ message: 'Faltan datos' }, { status: 400 })
   }
   try {
@@ -41,7 +40,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
     }
 
-    const userToImpose = await User.findOne({ email: owner })
+    const userToImpose = await User.findById(id)
     if (!userToImpose) {
       return NextResponse.json({ message: 'No existe el usuario' }, { status: 404 })
     }

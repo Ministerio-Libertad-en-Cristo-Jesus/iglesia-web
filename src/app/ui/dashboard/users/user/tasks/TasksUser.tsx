@@ -23,6 +23,7 @@ const TasksUser = async ({ importance, status, search, id }: { importance: strin
             status={task.status}
             importance={task.importance}
             idOwner={id}
+            roleAuthor={task.roleAuthor}
             />
           ) 
         })

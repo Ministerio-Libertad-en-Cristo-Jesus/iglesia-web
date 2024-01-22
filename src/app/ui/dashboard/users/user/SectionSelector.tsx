@@ -18,7 +18,6 @@ const SectionSelector = ({ section }: { section: string }) => {
       <button onClick={handleClick} name="tasks" className={`${section === 'tasks' ? 'bg-blueI text-whiteI' : 'bg-whiteI text-blueI'} ${styleButton}`}>Tareas</button>
       <button onClick={handleClick} name="createtask" className={`${section === 'createtask' ? 'bg-blueI text-whiteI' : 'bg-whiteI text-blueI'} ${styleButton}`}>Asignar Tarea</button>
       <button onClick={handleClick} name="respassword" className={`${section === 'respassword' ? 'bg-blueI text-whiteI' : 'bg-whiteI text-blueI'} ${styleButton}`}>Res. Contraseña</button>
-      <button onClick={handleClick} name="updateinfo" className={`${section === 'updateinfo' ? 'bg-blueI text-whiteI' : 'bg-whiteI text-blueI'} ${styleButton}`}>Cambiar información</button>
     </div>
   )
 }

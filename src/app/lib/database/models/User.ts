@@ -19,7 +19,8 @@ const userSchema = new Schema({
   },
   name: {
     type: String,
-    required: true
+    required: true,
+    encoding: "utf8mb4"
   },
   password: {
     type: String,
