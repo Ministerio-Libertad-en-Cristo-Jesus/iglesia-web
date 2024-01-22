@@ -33,7 +33,8 @@ export async function POST(req: Request) {
     const token = sign(
       {
         id: user._id,
-        email: user.email
+        email: user.email,
+        role: user.role
       },
       secret,
       {

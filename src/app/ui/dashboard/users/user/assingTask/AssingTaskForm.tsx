@@ -54,6 +54,12 @@ const AssingTaskForm = ({ id }: { id: string }) => {
       description: task.description.trim()
     }, { withCredentials: true })
       .then(res => {
+        setTask({
+          ...task,
+          title: '',
+          description: '',
+          importance: ''
+        })
         setMessage(res.data.message)
         setLoading(false)
       })

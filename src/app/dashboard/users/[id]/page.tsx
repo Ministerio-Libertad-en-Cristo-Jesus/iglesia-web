@@ -1,6 +1,7 @@
 import HeaderUser from "@/app/ui/dashboard/users/user/HeaderUser"
 import SectionSelector from "@/app/ui/dashboard/users/user/SectionSelector"
 import AssingTaskForm from "@/app/ui/dashboard/users/user/assingTask/AssingTaskForm"
+import ResPassword from "@/app/ui/dashboard/users/user/resPassword/ResPassword"
 import TasksUser from "@/app/ui/dashboard/users/user/tasks/TasksUser"
 
 const User = ({ params, searchParams }: { params: { id: string }, searchParams: { section: string, importance: string, status: string, search: string } }) => {
@@ -18,7 +19,9 @@ const User = ({ params, searchParams }: { params: { id: string }, searchParams: 
       {
         section === 'createtask' && <AssingTaskForm id={params.id}/>
       }
-
+      {
+        section === 'respassword' && <ResPassword id={params.id}/>
+      }
     </div>
   )
 }
