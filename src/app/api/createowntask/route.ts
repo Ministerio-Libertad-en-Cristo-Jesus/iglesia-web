@@ -17,9 +17,9 @@ export async function POST(req: Request) {
   
   // Extraigo los datos del body
   const body = await req.json()
-  const { title, description, importance, id } = body
+  const { title, description, importance } = body
   // Si algun dato falta o viene vacio devuelvo error
-  if (!title || !description || !importance || !id) {
+  if (!title || !description || !importance) {
     return NextResponse.json({ message: 'Faltan datos' }, { status: 400 })
   }
   try {
@@ -28,21 +28,13 @@ export async function POST(req: Request) {
     if (typeof verifiedToken === 'string') {
       return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
     }
-    const { email } = verifiedToken
+    const { id } = verifiedToken
     // Me conecto a la base de datos
     await connectToDB()
 
-    const user = await User.findOne({ email })
+    const user = await User.findById(id)
     if (!user) {
-      return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
-    }
-    if (user.role !== 'pastor') {
-      return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
-    }
-
-    const userToImpose = await User.findById(id)
-    if (!userToImpose) {
-      return NextResponse.json({ message: 'No existe el usuario' }, { status: 404 })
+      return NextResponse.json({ message: 'El usuario no existe' }, { status: 401 })
     }
 
     // Creo la tarea nueva tarea
@@ -51,7 +43,7 @@ export async function POST(req: Request) {
       description,
       importance,
       author: user._id,
-      owner: userToImpose._id
+      owner: user._id
     })
     await newTask.save()
 

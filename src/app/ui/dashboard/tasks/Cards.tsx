@@ -17,6 +17,7 @@ const Cards = async ({ importance, status, search }: { importance: string, statu
           title={task.title}
           description={task.description}
           status={task.status}
+          roleAuthor={task.roleAuthor}
           importance={task.importance}/>
         ) 
       })

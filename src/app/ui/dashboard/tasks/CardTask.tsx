@@ -3,17 +3,18 @@ import { updateTaskStatus } from "@/app/lib/actions/updateTaskStatus"
 interface Props {
   id: string
   author: string
+  roleAuthor: string
   title: string
   importance: string
   status: string
   description: string
 }
 
-const CardTask = ({ author, title, importance, status, description, id }: Props) => {
+const CardTask = ({ author, title, importance, status, description, id, roleAuthor }: Props) => {
   const priority = importance === 'high' ? 'Prioridad Alta' : importance === 'mid' ? 'Prioridad Media' : 'Prioridad Baja'
   return (
     <article className="flex flex-col items-start w-full rounded-xl bg-white border-2 border-blueI p-4 gap-4 md:gap-2">
-      <p className="flex text-xs text-gray-700 gap-1">Asignada por: {author} <VerifiedIcon admin={true} small={true} /></p>
+      <p className="flex text-xs text-gray-700 gap-1">Asignada por: {author} <VerifiedIcon admin={roleAuthor === 'pastor'} small={true} /></p>
       <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
         <div className={`w-full md:w-4 h-4 ${status === 'not_started' ? 'bg-red-600' : status === 'in_progress' ? 'bg-orange-600' : 'bg-green-600'} rounded-full`}></div>
         <h3 className="font-black text-lg md:text-2xl text-blueI">{title}</h3>

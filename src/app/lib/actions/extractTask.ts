@@ -13,6 +13,7 @@ interface Task {
   importance: string
   status: string
   author: string
+  roleAuthor: string
 }
 
 export async function extractTask (importance: string, status: string, search: string): Promise<Task[]> {
@@ -61,7 +62,8 @@ export async function extractTask (importance: string, status: string, search: s
         description: task.description,
         importance: task.importance,
         status: task.status,
-        author: task.userAuthor.name
+        author: task.userAuthor.name,
+        roleAuthor: task.userAuthor.role
       }
     })
 
