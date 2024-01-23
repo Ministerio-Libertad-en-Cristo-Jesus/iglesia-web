@@ -4,6 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
   const token = request.cookies.get(COOKIE_NAME)?.value || ''
+  if (!token && !request.nextUrl.pathname.startsWith('/login')) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
   try {
     const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
     const verifiedToken = await jwtVerify(token, new TextEncoder().encode(secret));
@@ -31,7 +34,7 @@ export async function middleware(request: NextRequest) {
     }
     return NextResponse.next();
   } catch (error) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    return;
   }
 }
 

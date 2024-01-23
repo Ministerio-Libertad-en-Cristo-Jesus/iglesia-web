@@ -1,6 +1,7 @@
 import { fetchUsers } from "@/app/lib/actions/fetchUsers"
 import Pagination from "./Pagination"
 import Link from "next/link"
+import { deleteUser } from "@/app/lib/actions/deleteUser"
 
 const UsersTable = async ({ search, page, role }: { search: string, page: number, role: string }) => {
   const { users, count } = await fetchUsers(search, page ,role)
@@ -24,7 +25,18 @@ const UsersTable = async ({ search, page, role }: { search: string, page: number
                 <td className="py-3 px-3 text-blueI">{user.email}</td>
                 <td className="py-3 px-3 text-blueI">{user.phone}</td>
                 <td className="py-3 px-3 text-blueI">{user.role === 'pastor' ? 'Pastor' : 'Lider'}</td>
-                <td className="py-3 px-3"><Link className="bg-blueI py-1 px-4 text-whiteI text-xs rounded-lg" href={`/dashboard/users/${user._id}`}>Ver</Link></td>
+                <td className="flex items-center py-3 px-3 gap-3">
+                  <Link
+                  className="bg-blueI py-1 px-4 text-whiteI text-xs rounded-lg"
+                  href={`/dashboard/users/${user._id}`}
+                  >
+                    Ver
+                  </Link>
+                  <form className="flex items-center" action={deleteUser}>
+                    <input className="hidden" name="id" type="text" value={JSON.parse(JSON.stringify(user._id))} readOnly />
+                    <button className="bg-red-800 py-1 px-4 text-whiteI text-xs rounded-lg">Eliminar</button>
+                  </form>
+                </td>
               </tr>
             ))
           }

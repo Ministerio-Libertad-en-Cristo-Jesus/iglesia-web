@@ -1,5 +1,5 @@
 import Task from '@/app/lib/database/models/Task'
-import { connectToDB } from "@/app/lib/database/utils"
+import { connectToDB, disconnectToDB } from "@/app/lib/database/utils"
 import { NextResponse } from "next/server"
 import { cookies } from 'next/headers'
 import { COOKIE_NAME } from '@/app/constants'
@@ -14,13 +14,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
   }
   const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
-  const verifiedToken = verify(token, secret)
-  // Si el token no es valido devuelvo error
-  if (typeof verifiedToken === 'string') {
-    return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
-  }
-  const { email } = verifiedToken
-
+  
   // Extraigo los datos del body
   const body = await req.json()
   const { title, description, importance, id } = body
@@ -29,6 +23,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'Faltan datos' }, { status: 400 })
   }
   try {
+    const verifiedToken = verify(token, secret)
+    // Si el token no es valido devuelvo error
+    if (typeof verifiedToken === 'string') {
+      return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
+    }
+    const { email } = verifiedToken
     // Me conecto a la base de datos
     await connectToDB()
 
