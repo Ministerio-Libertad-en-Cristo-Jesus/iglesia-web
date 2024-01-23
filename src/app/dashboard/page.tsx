@@ -1,8 +1,12 @@
+import { Suspense } from "react"
 import UserCard from "../ui/dashboard/UserCard"
+import LoadingDashboard from "../components/LoadingDashboard"
 
 const Dashboard = () => {
   return (
-    <UserCard />
+    <Suspense fallback={<LoadingDashboard />}>
+      <UserCard />
+    </Suspense>
   )
 }
  

@@ -1,5 +1,7 @@
+import LoadingDashboard from "@/app/components/LoadingDashboard"
 import UsersFilters from "@/app/ui/dashboard/users/UsersFilters"
 import UsersTable from "@/app/ui/dashboard/users/UsersTable"
+import { Suspense } from "react"
 
 const Users = ({ searchParams }: { searchParams: { search?: string, page?: string, role?: string } }) => {
   const search = searchParams?.search || ''
@@ -9,7 +11,9 @@ const Users = ({ searchParams }: { searchParams: { search?: string, page?: strin
     <div className="flex flex-col max-h-full overflow-auto textcal w-full p-8 bg-whiteI gap-8 rounded-xl">
       <UsersFilters />
       <hr className="border-blueI" />
-      <UsersTable search={search} page={page} role={role} />
+      <Suspense fallback={<LoadingDashboard />}>
+        <UsersTable search={search} page={page} role={role} />
+      </Suspense>
     </div>
   )
 }

@@ -7,12 +7,15 @@ import LogoutIcon from "@/app/components/componentSVG/LogoutIcon";
 import axios from "axios";
 import UsersIcon from "@/app/components/componentSVG/UsersIcon";
 import ArticlesIcon from "@/app/components/componentSVG/ArticlesIcon";
+import { useRouter } from "next/navigation";
 
 const Buttons = () => {
+  const router = useRouter()
   const handleLogout = () => {
     axios.get('/api/logout', { withCredentials: true })
       .then(res => {
         console.log(res.data)
+        router.push('/login')
       })
       .catch(err => {
         console.log(err)
@@ -28,7 +31,10 @@ const Buttons = () => {
         <Button icon={<ConfigIcon />} rute='/dashboard/config' name='Configuración' />
       </div>
       <div className="flex justify-end md:justify-stretch w-full mb-0 md:mb-8">
-        <Button icon={<LogoutIcon />} rute='/login' name='Cerrar Sesión' onClick={handleLogout} />
+        <button onClick={handleLogout} className="flex w-auto md:w-full items-center p-1 md:py-3 md:pl-2 rounded-md hover:bg-whiteI">
+          <LogoutIcon />
+          <p className='font-medium hidden md:block text-sm min-[1441px]:text-base sm:text-lg text-blueI ml-3'>Cerrar Sesión</p>
+        </button>
       </div>
     </div>
   )

@@ -1,8 +1,12 @@
+import { Suspense } from "react"
 import UserCard from "../ui/leader/UserCard"
+import LoadingDashboard from "../components/LoadingDashboard"
 
 const Leader = () => {
   return (
-    <UserCard />
+    <Suspense fallback={<LoadingDashboard />}>
+      <UserCard />
+    </Suspense>
   )
 }
  
