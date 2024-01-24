@@ -164,3 +164,11 @@ export interface UserLogin {
   email: string
   password: string
 }
+
+export interface ArticleForm {
+  title: string
+  author: string
+  type: 'preach' | 'news' | ''
+  image: File | null
+  content: string
+}
