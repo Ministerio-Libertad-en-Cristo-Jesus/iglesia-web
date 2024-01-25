@@ -8,11 +8,14 @@ import { ArticleForm } from "@/app/lib/definitions"
 import { useState } from "react"
 import validate from "./validate"
 import SpinLoader from "@/app/components/componentSVG/SpinLoader"
+import axios from "axios"
+import { uploadImage } from "@/app/lib/firebase/config"
 
 
 const FormNewArticle = () => {
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
+  const [imageUrl, setImageUrl] = useState('')
   const [article, setArticle] = useState<ArticleForm>({
     title: '',
     author: '',
@@ -28,7 +31,7 @@ const FormNewArticle = () => {
   })
   const typeArticleOptions =  [{ value: 'preach', text: 'Prédica' }, { value: 'news', text: 'Noticia' }]
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = async (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setMessage('')
     setArticle({
@@ -41,7 +44,7 @@ const FormNewArticle = () => {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if(Object.values(article).some(x => x === '' || x === null)) {
       setMessage('*Todos los campos son obligatorios')
@@ -50,11 +53,28 @@ const FormNewArticle = () => {
       setMessage('*Verifica los errores')
       return
     }
+    setLoading(true)
+    
+    axios.post('/api/createarticle', {
+      ...article,
+      title: article.title.trim(),
+      content: article.content.trim(),
+      author: article.author.trim(),
+      image: imageUrl
+    }, { withCredentials: true })
+      .then(res => {
+        setMessage(res.data.message)
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.log(err)
+        setLoading(false)
+      })
   }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center w-full gap-6">
-      <InputImage article={article} setArticle={setArticle} />
+      <InputImage article={article} setArticle={setArticle} setImage={setImageUrl} />
       <Input name="title" placeholder="Título" value={article.title} error={false} errorMessage={articleError.title} onChange={handleChange} type="text" />
       <div className="flex w-full gap-8">
         <Input name="author" placeholder="Predicador" value={article.author} error={false} errorMessage={articleError.author} onChange={handleChange} type="text" />
@@ -64,7 +84,7 @@ const FormNewArticle = () => {
       <div className={`${loading ? '' : 'hidden'}`}>
         <SpinLoader />
       </div>
-      <p className={`${message === '' ? 'hidden' : ''} text-sm font-medium text-center rounded-lg ${message === 'Tarea creada' ? 'text-green-800 bg-green-300' : 'text-red-800 bg-red-300'} py-1 px-1`}>{message}</p>
+      <p className={`${message === '' ? 'hidden' : ''} text-sm font-medium text-center rounded-lg ${message === 'Articulo creado' ? 'text-green-800 bg-green-300' : 'text-red-800 bg-red-300'} py-1 px-1`}>{message}</p>
       <ButtonLogin text="Crear Artículo" dark={true} type="submit" disabled={loading} />
     </form>
   )

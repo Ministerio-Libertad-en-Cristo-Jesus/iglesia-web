@@ -8,15 +8,28 @@ import ImageIcon from "./componentSVG/ImageIcon"
 interface Props {
   article: ArticleForm
   setArticle: React.Dispatch<SetStateAction<ArticleForm>>
+  setImage: React.Dispatch<SetStateAction<string>>
 }
 
-const InputImage = ({ article, setArticle }: Props) => {
+const InputImage = ({ article, setArticle, setImage }: Props) => {
+  const TransformFile = (file: File) => {
+    const reader = new FileReader();
+    if (file) {
+      reader.readAsDataURL(file)
+      reader.onloadend = async () => {
+        if (typeof reader.result === "string") {
+          setImage(reader.result)
+        }
+      };
+    }
+  };
+
   const handleAccept = (acceptedFiles: File[]) => {
     setArticle({...article, image: acceptedFiles[0]})
+    TransformFile(acceptedFiles[0])
   }
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
-    console.log(acceptedFiles[0])
   }, [])
   const {getRootProps, getInputProps, isDragActive, acceptedFiles, fileRejections} = useDropzone({
     onDrop,
