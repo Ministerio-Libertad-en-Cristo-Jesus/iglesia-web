@@ -8,14 +8,14 @@ const HeaderDashboard = () => {
     <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full justify-between">
       <h1 className="font-black text-blueI text-xl md:text-3xl">
         {
-          pathname === '/dashboard'
-          ? 'Dashboard'
-          : pathname === '/dashboard/tasks'
+          pathname.startsWith('/dashboard/tasks')
           ? 'Tareas'
-          : pathname === '/dashboard/config'
+          : pathname.startsWith('/dashboard/config')
           ? 'Configuración'
-          : pathname === '/dashboard/users'
+          : pathname.startsWith('/dashboard/users')
           ? 'Usuarios'
+          : pathname.startsWith('/dashboard/articles')
+          ? 'Artículos'
           : 'Dashboard'
         }
         </h1>

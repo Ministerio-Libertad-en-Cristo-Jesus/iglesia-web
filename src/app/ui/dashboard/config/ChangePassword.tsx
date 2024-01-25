@@ -48,7 +48,7 @@ const ChangePassword = () => {
     }
 
     setLoading(true)
-    axios.post('/api/changepassword', {
+    axios.put('/api/changepassword', {
       newPassword: newPassword.newpassword
     }, { withCredentials: true })
       .then(res => {
