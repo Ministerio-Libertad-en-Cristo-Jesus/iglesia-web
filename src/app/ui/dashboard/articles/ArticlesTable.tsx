@@ -1,8 +1,8 @@
 import Pagination from "./Pagination"
 import Link from "next/link"
-import { deleteUser } from "@/app/lib/actions/deleteUser"
 import { fetchArticles } from "@/app/lib/actions/fetchArticles"
 import { typeDateSeter } from "@/app/lib/typeDateSeter"
+import { deleteArticle } from "@/app/lib/actions/deleteArticle"
 
 const ArticlesTable = async ({ search, page, type }: { search: string, page: number, type: string }) => {
   const { articles, count } = await fetchArticles(search, page ,type)
@@ -33,7 +33,7 @@ const ArticlesTable = async ({ search, page, type }: { search: string, page: num
                   >
                     Editar
                   </Link>
-                  <form className="flex items-center" action={deleteUser}>
+                  <form className="flex items-center" action={deleteArticle}>
                     <input className="hidden" name="id" type="text" value={JSON.parse(JSON.stringify(article._id))} readOnly />
                     <button className="bg-red-800 py-1 px-4 text-whiteI text-xs rounded-lg">Eliminar</button>
                   </form>

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getDownloadURL, getStorage, ref, uploadString } from "firebase/storage"
+import { deleteObject, getDownloadURL, getStorage, ref, uploadString } from "firebase/storage"
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY || '',
@@ -22,5 +22,15 @@ export async function uploadImage(image: string, id: string): Promise<string> {
     return url
   } catch (error) {
     throw new Error('Error al subir la imagen')
+  }
+}
+
+export async function deleteImage(id: string): Promise<void> {
+  const storageRef = ref(storage, `articles/${id}`)
+
+  try {
+    await deleteObject(storageRef)
+  } catch (error) {
+    throw new Error('Error al borrar la imagen')
   }
 }
