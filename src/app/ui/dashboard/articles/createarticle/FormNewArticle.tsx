@@ -9,8 +9,6 @@ import { useState } from "react"
 import validate from "./validate"
 import SpinLoader from "@/app/components/componentSVG/SpinLoader"
 import axios from "axios"
-import { uploadImage } from "@/app/lib/firebase/config"
-
 
 const FormNewArticle = () => {
   const [message, setMessage] = useState('')
@@ -64,10 +62,17 @@ const FormNewArticle = () => {
     }, { withCredentials: true })
       .then(res => {
         setMessage(res.data.message)
+        setArticle({
+          title: '',
+          author: '',
+          image: null,
+          content: '',
+          type: ''
+        })
         setLoading(false)
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err.response.data.message)
         setLoading(false)
       })
   }

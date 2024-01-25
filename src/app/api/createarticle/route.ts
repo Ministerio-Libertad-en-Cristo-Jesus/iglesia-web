@@ -57,6 +57,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: 'Articulo creado' }, { status: 200 })
   } catch (error) {
-    return NextResponse.json({ error }, { status: 400 })
+    return NextResponse.json({ message: 'Ocurrio un error', error }, { status: 400 })
   }
 }

@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app"
 import { getDownloadURL, getStorage, ref, uploadString } from "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC0eYartlvH8_nhU0QYVGhwf6xdy3I3FoY",
-  authDomain: "iglesia-web.firebaseapp.com",
-  projectId: "iglesia-web",
-  storageBucket: "iglesia-web.appspot.com",
-  messagingSenderId: "251098738925",
-  appId: "1:251098738925:web:9f54f58c04d4f81e4e9ce4"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY || '',
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN || '',
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID || '',
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET || '',
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID || '',
+  appId: process.env.NEXT_PUBLIC_APP_ID || ''
 };
 
 const app = initializeApp(firebaseConfig)
