@@ -41,6 +41,10 @@ export async function POST(req: Request) {
     if (user.role !== 'pastor') {
       return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
     }
+    const titleRepeat = await Article.findOne({ title })
+    if (titleRepeat) {
+      return NextResponse.json({ message: 'El titulo ya existe' }, { status: 400 })
+    }
 
     // Creo la tarea nueva tarea
     const newArticle = new Article({
