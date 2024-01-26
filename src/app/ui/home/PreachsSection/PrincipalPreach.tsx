@@ -11,7 +11,7 @@ const PrincipalPreach = ({ title, author, date, content, image }: PreachType) =>
     <article className='flex flex-wrap p-10 lg:p-24 lg:flex-nowrap items-center  max-w-[1440px]'>
 
       <Image
-      className='lg:w-[420px] h-[370px] lg:h-[420px] mr-12 object-cover rounded-xl'
+      className='w-full lg:w-[420px] h-[370px] lg:h-[420px] mr-12 object-cover rounded-xl'
       width={1440}
       height={700}
       src={image}

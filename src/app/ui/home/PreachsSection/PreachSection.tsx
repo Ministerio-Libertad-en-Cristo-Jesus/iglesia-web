@@ -48,7 +48,7 @@ const PreachSection = () => {
         : <PrincipalPreachSkeleton />
       }
       <Cards preaches={restPreachings} />
-      <Button text='Ver más Prédicas' dark={false} onClick={() => { router.push('/preachings/1') }} />
+      <Button text='Ver más Prédicas' dark={false} onClick={() => { router.push('/preachings') }} />
     </section>
   )
 }
