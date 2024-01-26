@@ -14,30 +14,59 @@ import 'swiper/css/scrollbar'
 
 // Importación del componente Slide
 import Slide from './Slide'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { ArticleNew, PreachType } from '@/app/lib/definitions'
+import { typeDateModelSeter } from '@/app/lib/typeDateModelSeter'
+import SkeletonSlide from './SkeletonSlide'
 
 const Carrousel = () => {
   // Obtiene un conjunto limitado de datos de predicaciones (solo los primeros 3)
-  const preachs = preachings.slice(0, 3)
-  return (
-    <section id='carrouselPreach' className='flex w-screen flex-col justify-center'>
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={0} // Espacio entre las diapositivas
-        slidesPerView={1} // Número de diapositivas visibles al mismo tiempo
-        navigation
-        className='flex w-[100%] max-w-[1440px] header-carrousel'
-        pagination={{ clickable: true }} // Configuración de paginación (se puede hacer clic en los puntos)
-        >
-        {
-          // Itera sobre los datos de predicaciones y muestra cada una de ellas en un Slide
-          preachs.map(preaching => (
-            <SwiperSlide key={preaching.id}>
-              <Slide title={preaching.title} content={preaching.content} image={preaching.image} pastor={preaching.pastor} date={preaching.date} id={preaching.id} />
-            </SwiperSlide>
-          ))
-        }
+  const [articles, setArticles] = useState<PreachType[]>([])
 
-      </Swiper>
+  useEffect(() => {
+    axios.get('/api/articles/articlescarrousel', { withCredentials: true })
+      .then((res) => {
+        setArticles(res.data.map((art: ArticleNew) => {
+          return {
+            title: art.title,
+            content: art.content,
+            image: art.image,
+            author: art.author,
+            id: art.id,
+            date: typeDateModelSeter(art.createdAt)
+          }
+        }))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+
+  return (
+    <section id='carrouselPreach' className='flex w-screen items-center flex-col justify-center'>
+      {
+        articles[0] !== undefined
+        ? <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={0} // Espacio entre las diapositivas
+          slidesPerView={1} // Número de diapositivas visibles al mismo tiempo
+          navigation
+          className='flex w-[100%] max-w-[1440px] header-carrousel'
+          pagination={{ clickable: true }} // Configuración de paginación (se puede hacer clic en los puntos)
+          >
+          {
+            // Itera sobre los datos de predicaciones y muestra cada una de ellas en un Slide
+            articles.map(article => (
+              <SwiperSlide key={article.id}>
+                <Slide title={article.title} content={article.content} image={article.image} author={article.author} date={article.date} id={article.id} />
+              </SwiperSlide>
+            ))
+          }
+
+        </Swiper>
+        : <SkeletonSlide />
+      }
     </section>
   )
 }

@@ -27,12 +27,23 @@ export interface DateModel {
   year: number
 }
 
+export interface ArticleNew {
+    title:     string
+    image:     string
+    content:   string[]
+    type:      string
+    author:    string
+    createdAt: string
+    updatedAt: string
+    id:        string
+}
+
 export interface PreachType {
   title: string
-  id: number
+  id: string
   content: string[]
   image: string
-  pastor: string
+  author: string
   date: DateModel
 }
 

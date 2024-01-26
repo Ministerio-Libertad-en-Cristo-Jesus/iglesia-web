@@ -9,7 +9,7 @@ const BottonInfo = () => {
         <header>
           <h2 className='font-noto text-blueI text-2xl lg:text-3xl text-center mb-6 lg:mb-8 font-black'>Podría Interesarle</h2>
         </header>
-        <div className='flex flex-row flex-wrap justify-around items-center gap-10'>
+        <div className='flex flex-row flex-wrap justify-around gap-10'>
           {first3.map((preach) => (
             <CardSmall {...preach} key={preach.id} />
           ))}
