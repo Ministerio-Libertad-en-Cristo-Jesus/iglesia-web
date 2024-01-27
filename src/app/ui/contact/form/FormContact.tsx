@@ -6,6 +6,7 @@ import TextArea from '../../../components/TextArea'
 import { type FormMessageType } from '../../../lib/definitions'
 import validate from './validates'
 import SpinLoader from '../../../components/componentSVG/SpinLoader'
+import InputPhone from '@/app/components/InputPhone'
 
 const FormContact = () => {
   const [form, setForm] = useState<FormMessageType>({
@@ -29,6 +30,16 @@ const FormContact = () => {
   const [loading, setLoading] = useState(false)
   const [response, setResponse] = useState('')
   const [messageAl, setMessageAl] = useState('')
+
+  const handleChangePhone = (value: string) => {
+    setMessageAl('')
+    setResponse('')
+    setForm({ ...form, user_phone: value })
+    setErrors(validate({
+      ...form,
+      user_phone: value
+    }))
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -61,7 +72,7 @@ const FormContact = () => {
         ...form,
         user_name: form.user_name.trim(),
         user_email: form.user_email.trim(),
-        user_phone: form.user_phone.trim(),
+        user_phone: `+${form.user_phone.trim()}`,
         message: form.message.trim()
       }, 'Kq4mKCMT5kRg8zv3e')
         .then((result) => {
@@ -87,7 +98,7 @@ const FormContact = () => {
       <Input name='user_name' value={form.user_name} placeholder='Nombre' error={errors.user_name !== ''} errorMessage={errors.user_name} onChange={handleChange} type='text' />
       <div className='flex flex-col md:flex-row w-full gap-8 md:gap-8 justify-between'>
         <Input name='user_email' value={form.user_email} placeholder='Email' error={errors.user_email !== ''} errorMessage={errors.user_email} onChange={handleChange} type='email' />
-        <Input name='user_phone' value={form.user_phone} placeholder='Teléfono' error={errors.user_phone !== ''} errorMessage={errors.user_phone} onChange={handleChange} type='tel' />
+        <InputPhone placeholder="Teléfono" value={form.user_phone} onChange={handleChangePhone} errorMessage={errors.user_phone} />
       </div>
       <TextArea name='message' value={form.message} placeholder='Mensaje' error={errors.message !== ''} errorMessage={errors.message} onChange={handleChange} />
       <div className={`${loading ? '' : 'hidden'}`}>

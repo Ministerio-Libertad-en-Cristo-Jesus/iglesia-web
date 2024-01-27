@@ -102,7 +102,7 @@ const ChangePassword = () => {
       <div className={`flex w-full justify-center ${message === '' ? 'hidden' : ''}`}>
         <p className={`text-sm font-semibold text-center rounded-lg ${message === 'Contraseña Cambiada' ? 'text-green-700 bg-green-300' : 'text-red-800 bg-red-300'} py-1 px-3`}>{message}</p>
       </div>
-      <ButtonLogin text="Cambiar contraseña" dark={true} disabled={false} type="submit" />
+      <ButtonLogin text="Cambiar contraseña" dark={true} disabled={loading} type="submit" />
     </form>
   )
 }
