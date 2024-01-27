@@ -7,7 +7,7 @@ const UsersTable = async ({ search, page, role }: { search: string, page: number
   const { users, count } = await fetchUsers(search, page ,role)
   return (
     <div className="flex flex-col w-full gap-8">
-      <table className="w-full table-fixed">
+      <table className="w-full table-auto">
         <thead>
           <tr className="bg-blueI border-b border-blueI">
             <th className="py-3 px-3 text-start text-whiteI">Nombre</th>
@@ -22,7 +22,7 @@ const UsersTable = async ({ search, page, role }: { search: string, page: number
             users.map((user) => (
               <tr key={user._id} className="border-b border-blueI hover:bg-grayI">
                 <td className="py-3 px-3 text-blueI">{user.name}</td>
-                <td className="py-3 px-3 text-blueI">{user.email}</td>
+                <td className="flex py-3 px-3 text-blueI whitespace-nowrap">{user.email}</td>
                 <td className="py-3 px-3 text-blueI">{user.phone}</td>
                 <td className="py-3 px-3 text-blueI">{user.role === 'pastor' ? 'Pastor' : 'Lider'}</td>
                 <td className="flex items-center py-3 px-3 gap-3">

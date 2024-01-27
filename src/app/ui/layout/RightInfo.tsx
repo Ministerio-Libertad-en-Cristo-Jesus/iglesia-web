@@ -8,7 +8,7 @@ import CardSmallSkeleton from '@/app/components/CardSmallSkeleton'
 
 const RightInfo = () => {
   const [news, setNews] = useState<PreachType[]>([])
-  const [charged, setCharged] = useState(true)
+  const [charged, setCharged] = useState(false)
   const [message, setMessage] = useState('')
   const first3 = [1, 2, 3]
 

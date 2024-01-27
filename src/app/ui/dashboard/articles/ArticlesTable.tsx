@@ -8,7 +8,7 @@ const ArticlesTable = async ({ search, page, type }: { search: string, page: num
   const { articles, count } = await fetchArticles(search, page ,type)
   return (
     <div className="flex flex-col w-full gap-8">
-      <table className="w-full table-fixed">
+      <table className="w-full table-auto">
         <thead>
           <tr className="bg-blueI border-b border-blueI">
             <th className="py-3 px-3 text-start text-whiteI">Título</th>
