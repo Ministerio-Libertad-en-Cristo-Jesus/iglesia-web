@@ -6,9 +6,12 @@ import Pagination from '@/app/ui/preachings/Pagination'
 import axios from 'axios'
 import { ArticleNew, PreachType } from '@/app/lib/definitions'
 import { typeDateModelSeter } from '@/app/lib/typeDateModelSeter'
+import CardsSkeleton from '../ui/preachings/CardsSkeleton'
 
 export default function Preachings () {
   const [articles, setArticles] = useState<PreachType[]>([])
+  const [charged, setCharged] = useState(false)
+  const [message, setMessage] = useState('')
   const [count, setCount] = useState(0)
   const searchParams = useSearchParams()
   const page = searchParams.get("page") || '1'
@@ -16,6 +19,7 @@ export default function Preachings () {
   useEffect(() => {
     axios.get(`/api/articles/extractpreachings?page=${page}`)
       .then(res => {
+        setCharged(true)
         setArticles(res.data.articles.map((art: ArticleNew) => {
           return {
             title: art.title,
@@ -30,6 +34,8 @@ export default function Preachings () {
       })
       .catch((err) => {
         console.log(err)
+        setCharged(true)
+        setMessage('Error al cargar los articulos')
       })
   }, [page])
 
@@ -40,7 +46,13 @@ export default function Preachings () {
           <h1 className='font-black text-center text-blueI text-3xl lg:text-5xl mt-8'>Enseñanzas</h1>
           <p className='font-normal text-blueI text-center mb-16 text-xl mt-1'>Nuestras últimas enseñanzas</p>
         </header>
-        <Cards preachings={articles} />
+        {
+          charged
+          ? message === ''
+            ? <Cards preachings={articles} />
+            : <p className='text-lg text-center text-red-700'>{message}</p>
+          : <CardsSkeleton />
+        }
         <Pagination count={count} />
       </div>
     </main>
