@@ -13,14 +13,14 @@ const CardSmall = ({ title, author, content, date, image }: PreachType) => {
       <Image
       width={1440}
       height={700}
-      className=' w-60 min-w-[15rem] rounded-t-xl h-36 object-cover'
+      className='w-60 min-w-[15rem] rounded-t-xl h-36 object-cover'
       src={image}
       alt={title} />
-      <div className='m-4'>
-        <h2 className='  font-bold text-blueI text-base '>{title}</h2>
+      <div className='p-4'>
+        <h2 className='font-bold text-blueI text-base '>{title}</h2>
         <p className='font noto text-blueI mt-1 font-medium text-xs '>{author}</p>
-        <p className='  text-blueI mt-2 font-medium text-xs line-clamp-2'>{content[0]}</p>
-        <p className='  text-gray-600 mt-3 text-xs'>{dateSeter(date)}</p>
+        <p className='text-blueI mt-2 font-medium text-xs line-clamp-2'>{content[0]}</p>
+        <p className='text-gray-600 mt-3 text-xs'>{dateSeter(date)}</p>
       </div>
 
     </article>
