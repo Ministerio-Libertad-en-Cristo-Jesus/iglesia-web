@@ -1,13 +1,14 @@
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { type PreachType } from '../../lib/definitions'
 import { dateSeter } from '../../lib/dateSeter'
 import Image from 'next/image'
 
 const Card = ({ title, author, content, date, image }: PreachType) => {
   const router = useRouter()
+  const pathname = usePathname()
   return (
     <article
-    onClick={() => { router.push(`/preachings/${title}`) }}
+    onClick={() => { router.push(`${pathname.startsWith('/preachings') ? `/preachings/${title}` : `/news/${title}`}`) }}
     className='flex-2 sm:flex-3 min-w-[268px] bg-[#d6d6d6] rounded-t-xl rounded-b-xl hover:shadow-md lg:hover:shadow-xl hover:cursor-pointer transition-all duration-200'>
       <Image
       width={1440}

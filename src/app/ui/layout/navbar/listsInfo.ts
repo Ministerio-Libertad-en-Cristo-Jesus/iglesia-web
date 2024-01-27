@@ -21,6 +21,10 @@ export const list2: itemList[] = [
     name: 'Enseñanzas'
   },
   {
+    rute: '/news',
+    name: 'Noticias'
+  },
+  {
     rute: '/offering',
     name: 'Ofrendas'
   },

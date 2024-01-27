@@ -1,12 +1,12 @@
-'useClient'
+'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { type listProps } from '../../../lib/definitions'
 
-const List = ({ items, listStyle, itemStyle }: listProps) => {
+const List = ({ items, listStyle }: listProps) => {
   const pathname = usePathname()
   return (
-    <nav>
+    <nav className='flex w-full justify-center'>
       <ul className={listStyle}>
         {
           items.map((item, index) => {
