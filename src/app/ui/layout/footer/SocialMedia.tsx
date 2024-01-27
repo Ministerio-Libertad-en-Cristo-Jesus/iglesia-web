@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { socialMediaIcon } from '../../../lib/socialInfo'
 
 const SociaMedia = () => {
@@ -5,12 +6,12 @@ const SociaMedia = () => {
     <ul className='flex gap-10 sm:gap-12'>
       {
         socialMediaIcon.map(item => (
-          <li
+          <Link
           className='hover:cursor-pointer'
-          onClick={() => { window.open(item.link) }}
+          href={item.link}
           key={item.name}>
             {item.icon}
-          </li>
+          </Link>
         ))
       }
     </ul>
