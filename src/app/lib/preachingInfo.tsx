@@ -14,9 +14,9 @@ export const preachings: PreachType[] = [
       '3. Humildad y Dependencia en Dios: Este pasaje nos exhorta a abrazar la humildad y reconocer que somos seres humanos imperfectos. No debemos jactarnos de nuestras fortalezas, sino más bien, como Pablo sugiere, alardear en nuestras debilidades. Al hacerlo, mostramos nuestra dependencia en Dios y permitimos que Su poder se manifieste en nuestras vidas.',
       'En resumen, 2 Corintios 12:9 nos enseña a confiar en la gracia de Dios en tiempos de debilidad, a permitir que Su poder brille a través de nuestras limitaciones y a abrazar la humildad y la dependencia en Él. Esta lección nos recuerda que, en nuestras luchas y debilidades, encontramos fortaleza y crecimiento espiritual al depositar nuestra confianza en el Dios que nos ama incondicionalmente.'
     ],
-    id: 4,
+    id: '4',
     image: imagePreach1.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 1,
       month: 10,
@@ -34,9 +34,9 @@ export const preachings: PreachType[] = [
       '5. Comunión con Dios: La oración no es solo una lista de deseos, sino una forma de establecer una relación cercana con Dios. A través de la oración, aprendemos a conocer a Dios mejor, a escuchar Su voz y a experimentar Su amor de manera más profunda. ',
       'En resumen, "El Poder de la Oración" nos enseña que la oración es una herramienta vital en la vida del creyente. Nos brinda acceso a Dios, tiene un poder transformador, nos fortalece en las pruebas, nos guía en la toma de decisiones y fomenta una comunión cercana con nuestro Creador. La oración es una expresión de nuestra fe y confianza en Dios, y su influencia en nuestras vidas es verdaderamente poderosa.'
     ],
-    id: 3,
+    id: '3',
     image: imagePreach2.src,
-    pastor: 'Pastora Candy de Petit',
+    author: 'authora Candy de Petit',
     date: {
       day: 24,
       month: 9,
@@ -54,9 +54,9 @@ export const preachings: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 2,
+    id: '2',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 17,
       month: 9,
@@ -74,9 +74,9 @@ export const preachings: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 1,
+    id: '1',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 10,
       month: 9,
@@ -96,9 +96,9 @@ export const preachings2: PreachType[] = [
       '3. Humildad y Dependencia en Dios: Este pasaje nos exhorta a abrazar la humildad y reconocer que somos seres humanos imperfectos. No debemos jactarnos de nuestras fortalezas, sino más bien, como Pablo sugiere, alardear en nuestras debilidades. Al hacerlo, mostramos nuestra dependencia en Dios y permitimos que Su poder se manifieste en nuestras vidas.',
       'En resumen, 2 Corintios 12:9 nos enseña a confiar en la gracia de Dios en tiempos de debilidad, a permitir que Su poder brille a través de nuestras limitaciones y a abrazar la humildad y la dependencia en Él. Esta lección nos recuerda que, en nuestras luchas y debilidades, encontramos fortaleza y crecimiento espiritual al depositar nuestra confianza en el Dios que nos ama incondicionalmente.'
     ],
-    id: 4,
+    id: '4',
     image: imagePreach1.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 1,
       month: 10,
@@ -116,9 +116,9 @@ export const preachings2: PreachType[] = [
       '5. Comunión con Dios: La oración no es solo una lista de deseos, sino una forma de establecer una relación cercana con Dios. A través de la oración, aprendemos a conocer a Dios mejor, a escuchar Su voz y a experimentar Su amor de manera más profunda. ',
       'En resumen, "El Poder de la Oración" nos enseña que la oración es una herramienta vital en la vida del creyente. Nos brinda acceso a Dios, tiene un poder transformador, nos fortalece en las pruebas, nos guía en la toma de decisiones y fomenta una comunión cercana con nuestro Creador. La oración es una expresión de nuestra fe y confianza en Dios, y su influencia en nuestras vidas es verdaderamente poderosa.'
     ],
-    id: 3,
+    id: '3',
     image: imagePreach2.src,
-    pastor: 'Pastora Candy de Petit',
+    author: 'authora Candy de Petit',
     date: {
       day: 24,
       month: 9,
@@ -136,9 +136,9 @@ export const preachings2: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 2,
+    id: '2',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 17,
       month: 9,
@@ -156,9 +156,9 @@ export const preachings2: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 1,
+    id: '1',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 10,
       month: 9,
@@ -175,9 +175,9 @@ export const preachings2: PreachType[] = [
       '3. Humildad y Dependencia en Dios: Este pasaje nos exhorta a abrazar la humildad y reconocer que somos seres humanos imperfectos. No debemos jactarnos de nuestras fortalezas, sino más bien, como Pablo sugiere, alardear en nuestras debilidades. Al hacerlo, mostramos nuestra dependencia en Dios y permitimos que Su poder se manifieste en nuestras vidas.',
       'En resumen, 2 Corintios 12:9 nos enseña a confiar en la gracia de Dios en tiempos de debilidad, a permitir que Su poder brille a través de nuestras limitaciones y a abrazar la humildad y la dependencia en Él. Esta lección nos recuerda que, en nuestras luchas y debilidades, encontramos fortaleza y crecimiento espiritual al depositar nuestra confianza en el Dios que nos ama incondicionalmente.'
     ],
-    id: 4,
+    id: '4',
     image: imagePreach1.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 1,
       month: 10,
@@ -195,9 +195,9 @@ export const preachings2: PreachType[] = [
       '5. Comunión con Dios: La oración no es solo una lista de deseos, sino una forma de establecer una relación cercana con Dios. A través de la oración, aprendemos a conocer a Dios mejor, a escuchar Su voz y a experimentar Su amor de manera más profunda. ',
       'En resumen, "El Poder de la Oración" nos enseña que la oración es una herramienta vital en la vida del creyente. Nos brinda acceso a Dios, tiene un poder transformador, nos fortalece en las pruebas, nos guía en la toma de decisiones y fomenta una comunión cercana con nuestro Creador. La oración es una expresión de nuestra fe y confianza en Dios, y su influencia en nuestras vidas es verdaderamente poderosa.'
     ],
-    id: 3,
+    id: '3',
     image: imagePreach2.src,
-    pastor: 'Pastora Candy de Petit',
+    author: 'authora Candy de Petit',
     date: {
       day: 24,
       month: 9,
@@ -215,9 +215,9 @@ export const preachings2: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 2,
+    id: '2',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 17,
       month: 9,
@@ -235,9 +235,9 @@ export const preachings2: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 1,
+    id: '1',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 10,
       month: 9,
@@ -254,9 +254,9 @@ export const preachings2: PreachType[] = [
       '3. Humildad y Dependencia en Dios: Este pasaje nos exhorta a abrazar la humildad y reconocer que somos seres humanos imperfectos. No debemos jactarnos de nuestras fortalezas, sino más bien, como Pablo sugiere, alardear en nuestras debilidades. Al hacerlo, mostramos nuestra dependencia en Dios y permitimos que Su poder se manifieste en nuestras vidas.',
       'En resumen, 2 Corintios 12:9 nos enseña a confiar en la gracia de Dios en tiempos de debilidad, a permitir que Su poder brille a través de nuestras limitaciones y a abrazar la humildad y la dependencia en Él. Esta lección nos recuerda que, en nuestras luchas y debilidades, encontramos fortaleza y crecimiento espiritual al depositar nuestra confianza en el Dios que nos ama incondicionalmente.'
     ],
-    id: 4,
+    id: '4',
     image: imagePreach1.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 1,
       month: 10,
@@ -274,9 +274,9 @@ export const preachings2: PreachType[] = [
       '5. Comunión con Dios: La oración no es solo una lista de deseos, sino una forma de establecer una relación cercana con Dios. A través de la oración, aprendemos a conocer a Dios mejor, a escuchar Su voz y a experimentar Su amor de manera más profunda. ',
       'En resumen, "El Poder de la Oración" nos enseña que la oración es una herramienta vital en la vida del creyente. Nos brinda acceso a Dios, tiene un poder transformador, nos fortalece en las pruebas, nos guía en la toma de decisiones y fomenta una comunión cercana con nuestro Creador. La oración es una expresión de nuestra fe y confianza en Dios, y su influencia en nuestras vidas es verdaderamente poderosa.'
     ],
-    id: 3,
+    id: '3',
     image: imagePreach2.src,
-    pastor: 'Pastora Candy de Petit',
+    author: 'authora Candy de Petit',
     date: {
       day: 24,
       month: 9,
@@ -294,9 +294,9 @@ export const preachings2: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 2,
+    id: '2',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 17,
       month: 9,
@@ -314,9 +314,9 @@ export const preachings2: PreachType[] = [
       '4. Una Salvación Eterna: El precio pagado por Cristo asegura una salvación eterna para todos los que creen. Su sacrificio completo y perfecto cubre todos nuestros pecados pasados, presentes y futuros, y nos garantiza vida eterna en comunión con Dios.',
       'En resumen, "El Precio de la Salvación" nos recuerda que la salvación no es barata ni merecida, sino que se basa en el sacrificio supremo de Jesucristo en la cruz. Este versículo nos invita a contemplar el amor inquebrantable de Dios y a apreciar profundamente la gracia que nos ha sido otorgada a través de Cristo. Nos anima a recibir este regalo de salvación con gratitud y a vivir vidas que reflejen la transformación que proviene del amor y el sacrificio de nuestro Señor.'
     ],
-    id: 1,
+    id: '1',
     image: imagePreach3.src,
-    pastor: 'Pastor Jose Petit',
+    author: 'author Jose Petit',
     date: {
       day: 10,
       month: 9,

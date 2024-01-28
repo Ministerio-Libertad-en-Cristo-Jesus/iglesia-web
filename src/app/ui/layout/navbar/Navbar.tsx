@@ -1,8 +1,7 @@
 'use client'
 import { type Dispatch, type SetStateAction } from 'react'
 import List from './List'
-import Logo from '../../../../../public/svg/logo-blue.svg'
-import MenuIcon from '../../../components/componentSVG/menu'
+import MenuIcon from '@/app/components/componentSVG/menu'
 import Link from 'next/link'
 import { list1, list2 } from './listsInfo'
 import LogoBlue from '@/app/components/componentSVG/LogoBlue'
@@ -19,13 +18,15 @@ const Navbar = ({ openSidePanel, setOpenSidePanel }: Props) => {
   return (
     <header className='flex fixed top-0 z-[44] w-screen justify-center items-center px-28 h-20 bg-blueI'>
 
-      <List items={list1} listStyle={listStyles} itemStyle={linksStyles} />
+      <div className='flex w-full max-w-[1440px]'>
+        <List items={list1} listStyle={listStyles} itemStyle={linksStyles} />
 
-      <Link className='mt-16 lg:mt-20 mx-10' href='/'>
-        <LogoBlue />
-      </Link>
+        <Link className='mt-16 lg:mt-20 mx-10' href='/'>
+          <LogoBlue />
+        </Link>
 
-      <List items={list2} listStyle={listStyles} itemStyle={linksStyles} />
+        <List items={list2} listStyle={listStyles} itemStyle={linksStyles} />
+      </div>
 
       <button
       onClick={() => {

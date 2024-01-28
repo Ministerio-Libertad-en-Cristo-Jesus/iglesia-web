@@ -25,11 +25,9 @@ const validate = (inputs: FormMessageType) => {
   if (inputs.user_email.length < 10) errors.user_email = '*Mínimo 10 caracteres'
   if (inputs.user_email === '') errors.user_email = ''
 
-  //  VALIDATIONS USER_PHONE
-  if (inputs.user_phone.length > 15) errors.user_phone = '*Máximo 15 caracteres'
-  if (inputs.user_phone.length < 8) errors.user_phone = '*Mínimo 8 caracteres'
-  if (!phoneRegex.test(inputs.user_phone)) errors.user_phone = '*Solo números'
-  if (inputs.user_phone[0] !== '+') errors.user_phone = '*El primer caracter debe ser un "+" seguido del código del pais (Ejemplo: +58)'
+  //  VALIDATIONS phone
+  if (!phoneRegex.test(inputs.user_phone)) errors.user_phone = '*Teléfono no valido'
+  if (inputs.user_phone.length < 9) errors.user_phone = '*Mínimo 9 números'
   if (inputs.user_phone === '') errors.user_phone = ''
 
   //  VALIDATIONS MESSAGE

@@ -1,6 +1,6 @@
 const LogoBlue = () => {
   return (
-    <svg className='min-w-[110px] lg:min-w-[128px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.04 202.04">
+    <svg className='min-w-[110px] max-w-[150px] lg:max-w-[250px] lg:min-w-[128px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.04 202.04">
       <defs>
         <style>
           {'.cls-49{fill:#e5e5e5;}.cls-50{fill:#14213d;}.cls-51{fill:none;stroke:#14213d;stroke-linejoin:round;stroke-width:7px;}'}

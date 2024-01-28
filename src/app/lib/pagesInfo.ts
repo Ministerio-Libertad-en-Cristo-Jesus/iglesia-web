@@ -42,6 +42,10 @@ export const urlPagesInfo = [
     link: '/preachings'
   },
   {
+    text: 'Noticias',
+    link: '/news'
+  },
+  {
     text: 'Ofrendas',
     link: '/offering'
   },

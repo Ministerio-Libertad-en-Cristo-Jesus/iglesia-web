@@ -1,12 +1,12 @@
 'use client'
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
+import { usePathname } from 'next/navigation'
 import './globals.css'
 import { noto } from './ui/fonts'
 import Footer from './ui/layout/footer/Footer'
 import Navbar from './ui/layout/navbar/Navbar'
 import Sidepanel from './ui/layout/sidepanel/Sidepanel'
-import Loading from './loading'
 import ProviderComponent from '@/redux/ProviderComponent'
 
 export default function RootLayout({
@@ -16,6 +16,8 @@ export default function RootLayout({
 }) {
   const [openSidePanel, setOpenSidePanel] = useState(false)
   const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID as string
+  const pathname = usePathname()
+  const isRuteNotLayout = pathname.startsWith('/login') || pathname.startsWith('/leader') || pathname.startsWith('/dashboard')
   return (
     <html lang="en">
       <head>
@@ -29,12 +31,10 @@ export default function RootLayout({
       <body className={`${noto.className}`}>
         <ProviderComponent>
           <PayPalScriptProvider options={{ clientId: paypalClientId, currency: 'USD' }}>
-            <Suspense fallback={<Loading />}>
-              <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
-              <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />
-              {children}
-              <Footer />
-            </Suspense>
+            {!isRuteNotLayout && <Sidepanel openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />}
+            {!isRuteNotLayout && <Navbar openSidePanel={openSidePanel} setOpenSidePanel={setOpenSidePanel} />}
+            {children}
+            {!isRuteNotLayout && <Footer />}
           </PayPalScriptProvider>
         </ProviderComponent>
       </body>

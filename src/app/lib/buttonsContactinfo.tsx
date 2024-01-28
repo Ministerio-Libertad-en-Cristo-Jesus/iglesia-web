@@ -27,6 +27,6 @@ export const buttonsContactInfo: ButtonContactType[] = [
     text: 'Dirección de Email',
     icon: <MailIcon />,
     green: false,
-    url: 'mailto: libertadencristojesus@gmail.com'
+    url: 'mailto: ministerioilcj@gmail.com'
   }
 ]

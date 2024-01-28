@@ -1,25 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  async redirects() {
-    return [
+   images: {
+    remotePatterns: [
       {
-        source: "/preachings",
-        destination: '/preachings/1',
-        permanent: true,
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        port: '',
       },
-      {
-        source: "/preachings/0",
-        destination: '/preachings/1',
-        permanent: true,
-      },
-      {
-        source: "/preach",
-        destination: '/preachings/1',
-        permanent: true,
-      },
-    ]
+    ],
   },
+  reactStrictMode: false,
 }
 
 module.exports = nextConfig

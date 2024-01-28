@@ -1,3 +1,4 @@
+import ButtonLogin from './ButtonLogin'
 import PagesLinks from './PagesLinks'
 import SociaMedia from './SocialMedia'
 
@@ -11,6 +12,7 @@ const Footer = () => {
         <p className={textStyle}>8810 Commodity Cir #26, Orlando, FL 32819</p>
       </div>
       <SociaMedia />
+      <ButtonLogin />
       <div className='w-full h-[2px] my-16 bg-whiteI'></div>
       <div className='flex flex-col items-center'>
         <p className={textStyle}>Copyright © 2023 Ministerio Internacional Libertad en Cristo Jesus. Derechos Reservados</p>

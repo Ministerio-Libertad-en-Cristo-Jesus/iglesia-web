@@ -1,6 +1,6 @@
 const LogoInstagram = () => {
   return (
-    <svg className="max-w-[280px] lg:w-[420px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.38 96.04">
+    <svg className="min-w-[120px] max-w-[280px] lg:w-[420px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.38 96.04">
       <defs>
         <style>
           {'.cls-4{fill:#e5e5e5;}'}

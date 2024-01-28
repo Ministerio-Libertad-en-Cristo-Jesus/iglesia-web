@@ -5,6 +5,7 @@ import HandIcon from '../../../components/componentSVG/hand'
 import InfoIcon from '../../../components/componentSVG/info'
 import ContactIcon from '../../../components/componentSVG/contact'
 import CurrencyIcon from '../../../components/componentSVG/currency'
+import NewsIcon from '@/app/components/componentSVG/NewsIcon'
 
 export const buttonsArray: ButtonSidepanelProps[] = [
   {
@@ -26,6 +27,11 @@ export const buttonsArray: ButtonSidepanelProps[] = [
     svg: <BookOpenIcon />,
     rute: '/preachings',
     name: 'Enseñanzas'
+  },
+  {
+    svg: <NewsIcon />,
+    rute: '/news',
+    name: 'Noticias'
   },
   {
     svg: <CurrencyIcon />,
