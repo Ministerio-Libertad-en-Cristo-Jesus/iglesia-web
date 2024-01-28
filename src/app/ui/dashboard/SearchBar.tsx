@@ -25,7 +25,7 @@ const SearchBar = () => {
       onChange={handleChange}
       value={searchText}
       placeholder="Buscar"
-      className={`text-sm md:text-base outline-none w-full sm:w-[40%] rounded-l-lg border-y border-l md:border-y-2 md:border-l-2 border-l-blueI border-y-blueI py-1 pl-1 md:py-2 md:pl-2 text-blueI bg-white transition-all duration-200`}
+      className={`text-sm md:text-base appearance-none rounded-r-none outline-none w-full sm:w-[40%] rounded-l-lg border-y border-l md:border-y-2 md:border-l-2 border-l-blueI border-y-blueI py-1 pl-1 md:py-2 md:pl-2 text-blueI bg-white transition-all duration-200`}
       type="search" />
       <button className="flex justify-center items-center py-1 px-3 md:py-2 md:px-4 bg-blueI border-y border-r md:border-y-2 md:border-r-2 border-r-blueI border-y-blueI rounded-r-lg">
         <SearchIcon />

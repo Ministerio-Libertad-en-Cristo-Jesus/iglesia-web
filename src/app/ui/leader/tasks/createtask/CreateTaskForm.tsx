@@ -70,7 +70,7 @@ const CreateTaskForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center w-full gap-8">
-      <div className="flex w-full gap-8">
+      <div className="flex flex-col lg:flex-row w-full gap-8">
         <Input name="title" placeholder="Titulo de la tarea" value={task.title} error={false} errorMessage={taskErrors.title} onChange={handleChange} type="text" />
         <SelectFilter name="importance" options={optionsImportance} placeholder="Prioridad" value={task.importance} handleChange={handleChange} />
       </div>

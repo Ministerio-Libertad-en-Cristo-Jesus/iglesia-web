@@ -18,7 +18,7 @@ const InputChangePassword = ({ value, onChange, placeholder, name, error, errorM
         <input
         min={min}
         max={max}
-        className={`w-full outline-none rounded-l-lg border-y-2 border-l-2 ${error ? 'border-y-red-700 border-l-red-700' : 'border-y-blueI border-l-blueI'} py-2 pl-2 text-blueI bg-white transition-all duration-200`}
+        className={`w-full outline-none rounded-l-lg border-y-2 border-l-2 rounded-r-none ${error ? 'border-y-red-700 border-l-red-700' : 'border-y-blueI border-l-blueI'} py-2 pl-2 text-blueI bg-white transition-all duration-200`}
         name={name}
         value={value}
         onChange={onChange}

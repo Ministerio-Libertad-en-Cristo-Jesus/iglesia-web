@@ -19,7 +19,7 @@ const PagomovilMethod = () => {
             <p className="font-medium text-sm sm:text-base text-blueI">Número de Teléfono:<br className="sm:hidden" /> <b>0424-5495680</b></p>
             <p className="font-medium text-sm sm:text-base text-blueI">Código de Banco:<br className="sm:hidden" /> <b>0102</b> (Banco de Venezuela)</p>
           </div>
-          <p className="font-medium break-words text-xs sm:text-sm text-blueI">Recuerda que al realizar tu diezmo u ofrenda mediante pago movil puedes reportarlo através de nuestro correo electronico: <b>libertadencristojesus.report@gmail.com</b>, si no lo tomaremos como Donación anónima</p>
+          <p className="font-medium break-words text-xs sm:text-sm text-blueI">Recuerda que al realizar tu diezmo u ofrenda mediante pago movil puedes reportarlo através de nuestro correo electronico: <b>ministerioilcj@gmail.com</b>, si no lo tomaremos como Donación anónima</p>
         </div>
       </div>
     </article>
