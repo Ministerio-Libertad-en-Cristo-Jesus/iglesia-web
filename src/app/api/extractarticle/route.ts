@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   if (!token) {
     return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
   }
-  const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+  const secret = process.env.JWT_SECRET || ''
 
   try {
     await connectToDB()

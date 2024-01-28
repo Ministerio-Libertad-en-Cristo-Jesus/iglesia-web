@@ -29,7 +29,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Email o Contraseña incorrecta" }, { status: 401 })
     }
 
-    const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ""
+    const secret = process.env.JWT_SECRET || ""
     const token = sign(
       {
         id: user._id,

@@ -23,7 +23,7 @@ export async function fetchArticles (search: string, page: number, type: string)
   if (!token) {
     redirect('/login')
   }
-  const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+  const secret = process.env.JWT_SECRET || ''
 
   try {
     await connectToDB()

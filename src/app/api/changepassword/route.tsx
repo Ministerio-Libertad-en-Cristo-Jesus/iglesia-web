@@ -18,7 +18,7 @@ export async function PUT(req: Request) {
   if (!newPassword) {
     return NextResponse.json({ message: 'Faltan datos' }, { status: 400 })
   }
-  const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+  const secret = process.env.JWT_SECRET || ''
 
   try {
     await connectToDB()

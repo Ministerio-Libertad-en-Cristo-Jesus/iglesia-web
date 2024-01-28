@@ -8,7 +8,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
   try {
-    const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+    const secret = process.env.JWT_SECRET || ''
     const verifiedToken = await jwtVerify(token, new TextEncoder().encode(secret));
     // Si el token no es válido, redirigir al login
 

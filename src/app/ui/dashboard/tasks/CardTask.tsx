@@ -1,5 +1,5 @@
 import VerifiedIcon from "@/app/components/componentSVG/VerifiedIcon"
-import { updateTaskStatus } from "@/app/lib/actions/updateTaskStatus"
+import { updateTaskStatusPastor } from "@/app/lib/actions/updateTaskStatusPastor"
 interface Props {
   id: string
   author: string
@@ -21,7 +21,7 @@ const CardTask = ({ author, title, importance, status, description, id, roleAuth
         <p className={`w-full md:w-auto text-white text-xs sm:text-sm ${importance === 'high' ? 'bg-red-600' : importance === 'mid' ? 'bg-orange-600' : 'bg-green-600'} py-1 px-3 rounded-xl`}>{priority}</p>
       </div>
       <p className="text-sm sm:text-base text-blueI">{description}</p>
-      <form action={updateTaskStatus}>
+      <form action={updateTaskStatusPastor}>
         <input id="status" className="hidden" type="text" name="status" value={JSON.parse(JSON.stringify(status))} readOnly />
         <input id="id-value" className="hidden" type="text" name="id" value={JSON.parse(JSON.stringify(id))} readOnly />
         <button className="text-sm bg-blueI py-1 px-4 rounded-lg text-whiteI">

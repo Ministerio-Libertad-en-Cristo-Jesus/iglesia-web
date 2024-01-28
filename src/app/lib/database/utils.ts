@@ -7,7 +7,7 @@ export const connectToDB = async () => {
   const connection: ConnectionObj = {
     isConnected: 0
   }
-  const mongoUrl = process.env.NEXT_PUBLIC_MONGO_URL || ''
+  const mongoUrl = process.env.MONGO_URL || ''
   try {
     if(connection.isConnected) return
     const db = await mongoose.connect(mongoUrl)

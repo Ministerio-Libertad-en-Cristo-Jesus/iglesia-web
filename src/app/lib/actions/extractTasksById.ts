@@ -26,7 +26,7 @@ export async function extractTaskById (importance: string, status: string, searc
   if (!token) {
     redirect('/login')
   }
-  const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+  const secret = process.env.JWT_SECRET || ''
 
   try {
     await connectToDB()

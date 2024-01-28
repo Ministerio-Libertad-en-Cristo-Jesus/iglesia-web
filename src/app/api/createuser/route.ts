@@ -13,7 +13,7 @@ export async function POST(req: Request) {
   if (!token) {
     return NextResponse.json({ message: 'No autorizado' }, { status: 401 })
   }
-  const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+  const secret = process.env.JWT_SECRET || ''
 
   const body = await req.json()
   const { email, username, phone, name, password, role } = body

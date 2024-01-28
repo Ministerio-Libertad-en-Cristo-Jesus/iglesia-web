@@ -23,7 +23,7 @@ export async function fetchUsers (search: string, page: number, role: string): P
   if (!token) {
     redirect('/login')
   }
-  const secret = process.env.NEXT_PUBLIC_JWT_SECRET || ''
+  const secret = process.env.JWT_SECRET || ''
 
   try {
     await connectToDB()
