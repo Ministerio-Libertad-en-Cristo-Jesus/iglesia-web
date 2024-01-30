@@ -23,28 +23,26 @@ import SkeletonSlide from './SkeletonSlide'
 const Carrousel = () => {
   // Obtiene un conjunto limitado de datos de predicaciones (solo los primeros 3)
   const [articles, setArticles] = useState<PreachType[]>([])
-
-  const fetchNews = async () => {
-    const news = await axios.get('/api/articles/articlescarrousel', { withCredentials: true })
-    setArticles(news.data.map((art: ArticleNew) => {
-      return {
-        title: art.title,
-        content: art.content,
-        image: art.image,
-        author: art.author,
-        id: art.id,
-        date: typeDateModelSeter(art.createdAt)
-      }
-    }))
-  }
+  const [newsInHome, setNewsInHome] = useState(3)
 
   useEffect(() => {
-    fetchNews().then(res => {
-
-    }).catch(err => {
-      console.log(err)
-    })
-  }, [])
+    axios.get(`/api/articles/articlescarrousel?limit=${newsInHome}`, { withCredentials: true })
+      .then((res) => {
+        setArticles(res.data.map((art: ArticleNew) => {
+          return {
+            title: art.title,
+            content: art.content,
+            image: art.image,
+            author: art.author,
+            id: art.id,
+            date: typeDateModelSeter(art.createdAt)
+          }
+        }))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [newsInHome])
 
   return (
     <section id='carrouselPreach' className='flex w-screen items-center flex-col justify-center'>
@@ -53,7 +51,7 @@ const Carrousel = () => {
         ? <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
           }}
           loop={true} // Permite que el carrousel se repita infinitamente

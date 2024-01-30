@@ -17,10 +17,12 @@ const PreachSection = () => {
   const [articles, setArticles] = useState<PreachType[]>([])
   const firstPreach = articles[0]
   const restPreachings = articles.slice(1, 4)
+  const [preachInHome, setPreachInHome] = useState(3)
 
-  const fetchPreachings = async () => {
-    const preachings = await axios.get('/api/articles/articlespreach', { withCredentials: true })
-    setArticles(preachings.data.map((art: ArticleNew) => {
+  useEffect(() => {
+    axios.get(`/api/articles/articlespreach?limit=${preachInHome}`, { withCredentials: true })
+      .then((res) => {
+        setArticles(res.data.map((art: ArticleNew) => {
           return {
             title: art.title,
             content: art.content,
@@ -30,15 +32,11 @@ const PreachSection = () => {
             date: typeDateModelSeter(art.createdAt)
           }
         }))
-  }
-
-  useEffect(() => {
-    fetchPreachings().then(res => {
-
-    }).catch((err) => {
-      console.log(err)
-    })
-  }, [])
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [preachInHome])
 
   return (
     <section id='preachSection' className="flex flex-col flex-wrap mb-12 lg:mb-24 items-center max-w-[1440px]">
