@@ -18,10 +18,9 @@ const PreachSection = () => {
   const firstPreach = articles[0]
   const restPreachings = articles.slice(1, 4)
 
-  useEffect(() => {
-    axios.get('/api/articles/articlespreach', { withCredentials: true })
-      .then((res) => {
-        setArticles(res.data.map((art: ArticleNew) => {
+  const fetchPreachings = async () => {
+    const preachings = await axios.get('/api/articles/articlespreach', { withCredentials: true })
+    setArticles(preachings.data.map((art: ArticleNew) => {
           return {
             title: art.title,
             content: art.content,
@@ -31,10 +30,14 @@ const PreachSection = () => {
             date: typeDateModelSeter(art.createdAt)
           }
         }))
-      })
-      .catch(err => {
-        console.log(err)
-      })
+  }
+
+  useEffect(() => {
+    fetchPreachings().then(res => {
+
+    }).catch((err) => {
+      console.log(err)
+    })
   }, [])
 
   return (

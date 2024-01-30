@@ -24,23 +24,26 @@ const Carrousel = () => {
   // Obtiene un conjunto limitado de datos de predicaciones (solo los primeros 3)
   const [articles, setArticles] = useState<PreachType[]>([])
 
+  const fetchNews = async () => {
+    const news = await axios.get('/api/articles/articlescarrousel', { withCredentials: true })
+    setArticles(news.data.map((art: ArticleNew) => {
+      return {
+        title: art.title,
+        content: art.content,
+        image: art.image,
+        author: art.author,
+        id: art.id,
+        date: typeDateModelSeter(art.createdAt)
+      }
+    }))
+  }
+
   useEffect(() => {
-    axios.get('/api/articles/articlescarrousel', { withCredentials: true })
-      .then((res) => {
-        setArticles(res.data.map((art: ArticleNew) => {
-          return {
-            title: art.title,
-            content: art.content,
-            image: art.image,
-            author: art.author,
-            id: art.id,
-            date: typeDateModelSeter(art.createdAt)
-          }
-        }))
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    fetchNews().then(res => {
+
+    }).catch(err => {
+      console.log(err)
+    })
   }, [])
 
   return (
