@@ -24,7 +24,7 @@ const CardTask = ({ author, title, importance, status, description, id, roleAuth
       <form action={updateTaskStatus}>
         <input id="status" className="hidden" type="text" name="status" value={JSON.parse(JSON.stringify(status))} readOnly />
         <input id="id-value" className="hidden" type="text" name="id" value={JSON.parse(JSON.stringify(id))} readOnly />
-        <button className="text-sm bg-blueI py-1 px-4 rounded-lg text-whiteI">
+        <button className={`text-sm ${status === 'completed' ? 'hidden' : ''} bg-blueI py-1 px-4 rounded-lg text-whiteI`}>
           {status === 'not_started'
           ? 'Cambiar status a En proceso'
           : status === 'in_progress'

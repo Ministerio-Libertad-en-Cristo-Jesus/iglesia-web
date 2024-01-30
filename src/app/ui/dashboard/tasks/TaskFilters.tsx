@@ -58,9 +58,6 @@ const TaskFilters = () => {
       <button onClick={handleClick} className="w-full text-sm md:text-base bg-blueI text-whiteI py-2 px-8 md:py-3 md:px-12 rounded-xl">
         Todas
       </button>
-      <Link className="font-bold text-xl bg-blueI py-2 px-4 text-whiteI rounded-full" href={'/dashboard/tasks/createtask'}>
-        +
-      </Link>
     </section>
   )
 }
