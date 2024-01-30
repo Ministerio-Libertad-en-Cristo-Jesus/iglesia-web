@@ -6,10 +6,8 @@ import FormLogin from "./FormLogin"
 import Link from "next/link"
 import { UserLogin } from "@/app/lib/definitions"
 import axios from "axios"
-import { useRouter } from "next/navigation"
 
 const LoginBox = () => {
-  const router = useRouter()
   const [role, setRole] = useState('pastor')
   const [user, setUser] = useState<UserLogin>({
     email: '',
@@ -40,7 +38,7 @@ const LoginBox = () => {
     }, { withCredentials: true })
       .then(res => {
         setLoading(false)
-        router.push(`/${role === 'pastor' ? 'dashboard' : 'leader'}`)
+        window.location.pathname = `/${role === 'pastor' ? 'dashboard' : 'leader'}`
       })
       .catch(err => {
         setLoading(false)

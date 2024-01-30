@@ -42,7 +42,6 @@ const UsersFilters = () => {
       <Link className="font-bold text-xl bg-blueI py-2 px-4 text-whiteI rounded-full" href={'/dashboard/users/add'}>
         +
       </Link>
-
     </section>
   )
 }

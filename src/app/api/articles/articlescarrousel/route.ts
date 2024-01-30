@@ -7,8 +7,8 @@ export async function GET(req: Request) {
     await connectToDB()
 
     const article = await Article.find({ type: 'news' })
-      .limit(3)
-      .sort({ createdAt: -1 })
+    .limit(3)
+    .sort({ createdAt: -1 })
   
     return NextResponse.json(article, { status: 200 })
 

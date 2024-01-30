@@ -1,7 +1,7 @@
 // Importación de componentes y estilos de Swiper
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 
 // Importación de datos de predicaciones
 import { preachings } from '../../../lib/preachingInfo'
@@ -48,10 +48,15 @@ const Carrousel = () => {
       {
         articles[0] !== undefined
         ? <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+          }}
+          loop={true} // Permite que el carrousel se repita infinitamente
           spaceBetween={0} // Espacio entre las diapositivas
           slidesPerView={1} // Número de diapositivas visibles al mismo tiempo
-          navigation
+          navigation={true} // Configuración de navegación (botones de avanzar y retroceder)
           className='flex w-[100%] max-w-[1440px] header-carrousel'
           pagination={{ clickable: true }} // Configuración de paginación (se puede hacer clic en los puntos)
           >
