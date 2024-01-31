@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   images: {
+  headers: () => [
+    {
+      source: '/',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'no-store',
+        },
+      ],
+    },
+  ],
+  images: {
     remotePatterns: [
       {
         protocol: 'https',
