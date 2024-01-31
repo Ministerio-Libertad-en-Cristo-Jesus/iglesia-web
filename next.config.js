@@ -10,6 +10,9 @@ const nextConfig = {
     ],
   },
   reactStrictMode: false,
+  experimentalFeatures: {
+    excludeISR: ['/api/articles/articlescarrousel', '/api/articles/articlespreach'],
+  },
 }
 
 module.exports = nextConfig
