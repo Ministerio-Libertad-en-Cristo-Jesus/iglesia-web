@@ -72,7 +72,7 @@ const FormNewArticle = () => {
         setLoading(false)
       })
       .catch((err) => {
-        console.log(err.response.data.message)
+        setMessage(err.response.data.message)
         setLoading(false)
       })
   }
