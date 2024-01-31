@@ -2,6 +2,7 @@ import Article from '@/app/lib/database/models/Article'
 import { connectToDB } from '@/app/lib/database/utils'
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
   try {
     await connectToDB()

@@ -23,10 +23,9 @@ import SkeletonSlide from './SkeletonSlide'
 const Carrousel = () => {
   // Obtiene un conjunto limitado de datos de predicaciones (solo los primeros 3)
   const [articles, setArticles] = useState<PreachType[]>([])
-  const [newsInHome, setNewsInHome] = useState(3)
 
   useEffect(() => {
-    axios.get(`/api/articles/articlescarrousel?limit=${newsInHome}`, { withCredentials: true })
+    axios.get(`/api/articles/articlescarrousel`, { withCredentials: true })
       .then((res) => {
         setArticles(res.data.map((art: ArticleNew) => {
           return {
@@ -42,7 +41,7 @@ const Carrousel = () => {
       .catch(err => {
         console.log(err)
       })
-  }, [newsInHome])
+  }, [])
 
   return (
     <section id='carrouselPreach' className='flex w-screen items-center flex-col justify-center'>
