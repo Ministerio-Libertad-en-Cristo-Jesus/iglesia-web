@@ -12,7 +12,6 @@ const Buttons = () => {
   const handleLogout = () => {
     axios.get('/api/logout', { withCredentials: true })
       .then(res => {
-        console.log(res.data)
         router.push('/login')
       })
       .catch(err => {

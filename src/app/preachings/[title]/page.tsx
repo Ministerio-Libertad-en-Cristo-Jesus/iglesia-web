@@ -36,7 +36,6 @@ export default function Preach () {
       })
       .catch(err => {
         setCharged(true)
-        console.log(err)
         setMessage(err.response.data.message)
       })
   }, [preachTitle])

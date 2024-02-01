@@ -70,7 +70,6 @@ const FormEditArticle = ({ id }: { id: string }) => {
         setLoading(false)
       })
       .catch((err) => {
-        console.log(err.response.data.message)
         setLoading(false)
       })
   }
@@ -78,7 +77,6 @@ const FormEditArticle = ({ id }: { id: string }) => {
   useEffect(() => {
     axios.post('/api/extractarticle', { id }, { withCredentials: true })
       .then((res) => {
-        console.log(res.data)
         setArticle({
           ...article,
           title: res.data.title,
@@ -90,7 +88,6 @@ const FormEditArticle = ({ id }: { id: string }) => {
         setChargedMessage('OK')
       })
       .catch((err) => {
-        console.log(err.response.data.message)
         setCharged(true)
         setChargedMessage('NO')
       })

@@ -29,7 +29,6 @@ const BottonInfo = () => {
       .catch((err) => {
         setCharged(true)
         setMessage(err.response.data.message)
-        console.log(err)
       })
   }, [])
 

@@ -36,7 +36,6 @@ export default function News () {
       })
       .catch(err => {
         setCharged(true)
-        console.log(err)
         setMessage(err.response.data.message)
       })
   }, [preachTitle])
