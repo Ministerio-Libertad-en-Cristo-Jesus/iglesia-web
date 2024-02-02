@@ -38,6 +38,10 @@ export const urlPagesInfo = [
     link: '/prayers'
   },
   {
+    text: 'Devocionales',
+    link: '/devotionals'
+  },
+  {
     text: 'Enseñanzas',
     link: '/preachings'
   },

@@ -33,7 +33,6 @@ export default function News () {
         setCount(parseInt(res.data.count))
       })
       .catch((err) => {
-        console.log(err)
         setCharged(true)
         setMessage('Error al cargar los articulos')
       })
