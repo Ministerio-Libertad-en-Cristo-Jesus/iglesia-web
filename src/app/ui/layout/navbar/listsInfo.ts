@@ -12,6 +12,10 @@ export const list1: itemList[] = [
   {
     rute: '/prayers',
     name: 'Oraciones'
+  },
+  {
+    rute: '/devotionals',
+    name: 'Devocionales'
   }
 ]
 

@@ -12,13 +12,13 @@ interface Props {
 }
 
 const Navbar = ({ openSidePanel, setOpenSidePanel }: Props) => {
-  const listStyles = 'gap-16 items-center hidden xl:flex'
+  const listStyles = 'gap-12 items-center hidden xl:flex'
   const linksStyles = 'font-medium text-lg text-whiteI hover:text-yellow-500 transition-all duration-200'
 
   return (
     <header className='flex fixed top-0 z-[44] w-screen justify-center items-center px-28 h-20 bg-blueI'>
 
-      <div className='flex w-full max-w-[1440px]'>
+      <div className='flex items-center justify-center w-full max-w-[1440px]'>
         <List items={list1} listStyle={listStyles} itemStyle={linksStyles} />
 
         <Link className='mt-16 lg:mt-20 mx-10' href='/'>

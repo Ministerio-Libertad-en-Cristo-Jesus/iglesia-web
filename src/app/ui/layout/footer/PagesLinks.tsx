@@ -1,10 +1,8 @@
 'use client'
-import { useRouter } from 'next/navigation'
 import { urlPagesInfo } from '../../../lib/pagesInfo'
 import Link from 'next/link'
 
 const PagesLinks = () => {
-  const router = useRouter()
   return (
     <nav>
       <ul className='flex flex-wrap gap-8 items-center justify-center sm:gap-16'>
