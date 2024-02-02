@@ -2,14 +2,16 @@ import { YOUTUBE_PLAYLIST_ITEMS_API } from "@/app/constants"
 import axios from "axios"
 import { YoutubeVideos } from "./definitions"
 import DevotionalCard from "./DevotionalCard"
+import { revalidatePath } from "next/cache"
 
-export const dynamic = 'force-dynamic'
 const apiKey = process.env.YOUTUBE_API_KEY || ''
 const playlistId = process.env.YOUTUBE_PLAYLIST_ID || ''
 
 async function getPlaylistItems () {
+  revalidatePath('/devotionals')
+  const timestamp = Date.now()
   try {
-    const res = await axios.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${playlistId}&key=${apiKey}`)
+    const res = await axios.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${playlistId}&key=${apiKey}&timestamp=${timestamp}`)
     return res.data as YoutubeVideos
   } catch (error) {
     console.log(error)
