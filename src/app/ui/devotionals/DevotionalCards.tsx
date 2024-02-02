@@ -3,6 +3,7 @@ import axios from "axios"
 import { YoutubeVideos } from "./definitions"
 import DevotionalCard from "./DevotionalCard"
 
+export const dynamic = 'force-dynamic'
 const apiKey = process.env.YOUTUBE_API_KEY || ''
 const playlistId = process.env.YOUTUBE_PLAYLIST_ID || ''
 
